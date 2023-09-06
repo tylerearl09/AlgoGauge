@@ -39,7 +39,7 @@ User.createIndexes();
 const express = require('express');
 const app = express();
 const cors = require("cors");
-console.log("App listen at port 5000");
+console.log(`App listen at port ${process.env.PORT}`);
 app.use(express.json());
 app.use(cors());
 app.get("/", (req, resp) => {
@@ -54,11 +54,11 @@ app.get("/", (req, resp) => {
  
 app.post("/register", async (req, resp) => {
     try {
+        console.log(req.body);
         const user = new User(req.body);
         let result = await user.save();
         console.log(result);
-        result = result.toObject();       
-
+        result = result.toObject();
         if (result) {
             delete result.password;
             resp.send(req.body);
@@ -67,7 +67,8 @@ app.post("/register", async (req, resp) => {
         }
  
     } catch (e) {
+        console.log(e);
         resp.send("Something Went Wrong");
     }
 });
-app.listen(5000);
+app.listen(process.env.PORT);

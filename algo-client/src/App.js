@@ -18,7 +18,7 @@ function App() {
       try{
         result = await result.json();
         if (result){
-          alert("I'm sorry, Brad. I can't do that");
+          alert("Welcome, Brad. I can do that");
           setEmail("");
           setName("");
         }
@@ -26,7 +26,7 @@ function App() {
       }
       catch(e){
         console.log(e.message);
-        alert("Something went wrong");
+        alert("I'm sorry Brad, I can't do that");
       }
     
   }

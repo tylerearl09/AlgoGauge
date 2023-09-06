@@ -13,7 +13,7 @@ try{
     });
 
 } catch (e) {
-    console.log("could not connect");    
+    console.log("could not connect");
 }
  
 // Schema for users of app

@@ -15,13 +15,20 @@ function App() {
           'Content-Type' : 'application/json'
         }
       })
-    result = await result.json();
-    console.warn(result);
-    if (result){
-      alert("Data saved succesfully");
-      setEmail("");
-      setName("");
-    }
+      try{
+        result = await result.json();
+        if (result){
+          alert("I'm sorry, Brad. I can't do that");
+          setEmail("");
+          setName("");
+        }
+        console.warn(result);
+      }
+      catch(e){
+        console.log(e.message);
+        alert("Something went wrong");
+      }
+    
   }
   return (
     <div className="App">

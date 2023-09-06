@@ -56,11 +56,12 @@ app.post("/register", async (req, resp) => {
     try {
         const user = new User(req.body);
         let result = await user.save();
-        result = result.toObject();
+        console.log(result);
+        result = result.toObject();       
+
         if (result) {
             delete result.password;
             resp.send(req.body);
-            console.log(result);
         } else {
             console.log("User already register");
         }
@@ -69,4 +70,4 @@ app.post("/register", async (req, resp) => {
         resp.send("Something Went Wrong");
     }
 });
-app.listen(4000);
+app.listen(5000);

@@ -1,0 +1,42 @@
+1. Run Sorting Algos
+  a) O(n^2)
+    - Bubble Sort
+    - Selection Sort
+    - Insertion Sort
+  b) O(logN)
+    - Quick Sort
+    - Merge Sort
+    - Heap Sort
+    - Tim-Sort
+  c) O(n+k)
+    - Bucket Sort
+      * Parallel
+2. Display Metrics
+  a) Wall Time
+  b) Extra Memory Usage
+  c) Sepculative Execution
+  d) Cache Performance
+3. Fair Test Settings
+  a) Same array size
+  a) Same array random seed
+4. Run Hashing Algos
+  a) Hash Tables
+  b) Open Hashing (Linked List)
+  c) Linear Probing
+5. Display Algorithm information
+  a) Big Theata worst case
+  b) Big Theata average case
+  c) Show code snippet from live code
+6. More Sorting Options
+  a) quick
+    - Partioning
+  b) merge
+    - 2-way
+    - k-way (w/ arrays)
+    - k-way (w/ heap)
+    - parallel
+      - cpu
+      - gpu
+  c) Quadratic probing
+      - Double Hashing
+      - Cuckoo Hashing

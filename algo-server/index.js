@@ -58,7 +58,7 @@ app.post("/test", async (req, resp) => {
         console.log("Server Test") 
 
         //exec("powershell cat helloWorld.cpp", (error, stdout, stderr) => {
-        exec("powershell ./hello.exe", (error, stdout, stderr) => {
+        exec("./a.out", (error, stdout, stderr) => {
             if (error) {
                 console.log(`error: ${error.message}`);
                 return;

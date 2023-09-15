@@ -1,5 +1,6 @@
 // To connect with your mongoDB database
 const mongoose = require('mongoose');
+const { exec } = require('child_process')
 require('dotenv').config();
 try{
     mongoose
@@ -51,7 +52,29 @@ app.get("/", (req, resp) => {
     // If you see App is working means
     // backend working properly
 });
- 
+
+app.post("/test", async (req, resp) => {
+    try {
+        console.log("Server Test") 
+
+        //exec("powershell cat helloWorld.cpp", (error, stdout, stderr) => {
+        exec("powershell ./hello.exe", (error, stdout, stderr) => {
+            if (error) {
+                console.log(`error: ${error.message}`);
+                return;
+            }
+            if (stderr) {
+                console.log(`stderr: ${stderr}`);
+                return;
+            }
+            console.log(`stdout: ${stdout}`);
+        });
+    } catch (e) {
+        console.log(e);
+        resp.send("Something Went Wrong");
+    }
+});
+
 app.post("/register", async (req, resp) => {
     try {
         console.log(req.body);

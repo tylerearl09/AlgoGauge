@@ -44,6 +44,25 @@ function App() {
         value={email} onChange={(e) => setEmail(e.target.value)} />
         <button type="submit"
         onClick={handleOnSubmit}>submit</button>
+        <button onClick={ async(e) =>  {
+            console.log("Testing")
+            e.preventDefault();
+            let result = await fetch(
+              'http://localhost:4000/test', {
+                method: "post",
+                headers: {
+                  'Content-Type' : 'application/json'
+                }
+              })
+            try{
+              result = await result.json();
+              console.warn(result);
+            } catch(e){
+              console.log(e.message);
+              alert("I'm sorry Brad, I can't do that");
+            }
+        }
+        } >Test</button>
       </form>       
       </header>
       

@@ -2,9 +2,11 @@
 
 using namespace std;
 
-int main() {
+int main(int argc, char *argv[]) {
 
-  cout << "Hello World" << endl;
+string first = argv[1];
 
-  return 0;
+cout << first << " World!" << endl;
+
+ return 0;
 }

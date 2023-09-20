@@ -8,7 +8,7 @@ function App() {
   const handleOnSubmit = async (e) => {
     e.preventDefault();
     let result = await fetch(
-      'http://localhost:4000/register', {
+      'http://localhost:5000/register', {
         method: "post",
         body: JSON.stringify({name, email}),
         headers: {
@@ -48,7 +48,7 @@ function App() {
             console.log("Testing")
             e.preventDefault();
             let result = await fetch(
-              'http://localhost:4000/test', {
+              'http://localhost:5000/test', {
                 method: "post",
                 headers: {
                   'Content-Type' : 'application/json'

@@ -1,21 +1,22 @@
 1. Run Sorting Algos
   a) O(n^2)
-    - Bubble Sort
-    - Selection Sort
-    - Insertion Sort
+    - Bubble Sort -1
+    - Selection Sort -1
+    - Insertion Sort -1
   b) O(logN)
-    - Quick Sort
-    - Merge Sort
-    - Heap Sort
-    - Tim-Sort
+    - Quick Sort -1
+    - Merge Sort -1
+    - Heap Sort -1
+    - Tim-Sort -2
   c) O(n+k)
-    - Bucket Sort
+    - Bucket Sort -1
       * Parallel
 2. Display Metrics
-  a) Wall Time
-  b) Extra Memory Usage
-  c) Sepculative Execution
-  d) Cache Performance
+  a) Wall Time -1
+  b) Extra Memory Usage -?
+  c) Sepculative Execution -1
+  d) Cache Performance -1
+  e) Number of Operations 
 3. Fair Test Settings
   a) Same array size
   a) Same array random seed

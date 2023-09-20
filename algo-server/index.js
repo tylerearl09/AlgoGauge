@@ -58,7 +58,7 @@ app.post("/test", async (req, resp) => {
         console.log("Server Test") 
 
         //exec("powershell cat helloWorld.cpp", (error, stdout, stderr) => {
-        exec("powershell ./a \"hello\" ", (error, stdout, stderr) => {
+        exec("powershell ./a \"HelLo\" ", (error, stdout, stderr) => {
             if (error) {
                 console.log(`error: ${error.message}`);
                 return;
@@ -68,6 +68,8 @@ app.post("/test", async (req, resp) => {
                 return;
             }
             console.log(`stdout: ${stdout}`);
+            let string = `${stdout}`
+            resp.send( JSON.stringify(`${stdout}`) );
         });
     } catch (e) {
         console.log(e);

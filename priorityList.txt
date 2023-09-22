@@ -1,11 +1,11 @@
 0. Draw Screens
-  a) Show Selected Algorithms - minimum 2  priority 1!!! Modal popup, screenshots
+  a) Show Selected Algorithms - minimum 2  priority 1!!! Modal popup for alorithm info, screenshots
   b) Show each screen -more detail! Instead of a 1, show Algorithm and options
   c) Array size per Algorithm
   d) kinds of data: sorted, random, reverse sorted, partial sort, all repeats
   e) No random seed yet
   f) queue screen for loading/staggering - highlight submitted one, see other results?
-  g) limits? -2
+  g) limits on jobs? -2
   h) queuing details -3
   i) History page -1, name, jobs, results. Searchable(-3) / filterable (-3)
   j) Previously run -3

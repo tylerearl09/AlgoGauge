@@ -1,0 +1,12 @@
+Name in top right
+Choose Categories
+  Put under header
+Items as Logrithmic slider
+Put "See Bubble Sort code" under drop down, and rename to "Bubble Sort Information"
+Queue Graphics not needed, text is fine
+Add "Filter by" to history screen
+Change color of header bar
+Use Vs. in history page
+
+User time out based on time taken not total runs
+

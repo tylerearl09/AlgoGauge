@@ -1,5 +1,6 @@
-import logo from './icon-256x256.png';
-import './App.css';
+import logo from '../icon-256x256.png';
+import '../App.css';
+import NavBar from './Navbar';
 import { useState } from 'react'
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
   }
   return (
     <div className="App">
+      <NavBar />
       <header className="App-header">
         <img src={logo}/>
         <p>

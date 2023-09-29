@@ -1,6 +1,7 @@
 import logo from '../icon-256x256.png';
 import '../App.css';
 import NavBar from './Navbar';
+import AlgorithmTest from './AlgorithmTest';
 import { useState } from 'react'
 
 function App() {
@@ -64,8 +65,9 @@ function App() {
               alert("I'm sorry Brad, I can't do that");
             }
         }
-        } >Test</button>
-      </form>       
+        } >Test</button>        
+      </form> 
+      <AlgorithmTest />     
       </header>
       
     </div>

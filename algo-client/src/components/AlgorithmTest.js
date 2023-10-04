@@ -2,6 +2,7 @@ import React from 'react'
 import Select from 'react-select'
 
 
+
 const sortOptions = [
     { value: 'Bubble Sort', label: 'Bubble Sort'},
     { value: 'Insertion Sort', label: 'Insertion Sort'},
@@ -19,6 +20,8 @@ const modifiers = [
     { value: 'Full Sort', label: 'Full Sort'},
     { value: 'Repeats', label: 'Repeat'}
 ]
+
+
 
 
 function AlgorithmTest (props) {

@@ -3,7 +3,7 @@ import '../App.css';
 function NavBar () {
 
     return(
-        <nav class="navbar navbar-custom navbar-expand-lg ps-5">
+        <nav class="navbar bg-dark navbar-dark navbar-expand-lg ps-5">
         <a class="navbar-brand" href="#">Aolguage</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

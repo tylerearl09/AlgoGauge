@@ -1,10 +1,8 @@
 import logo from '../icon-256x256.png';
-import '../App.css';
-import NavBar from './Navbar';
-import AlgorithmTest from './AlgorithmTest';
+import AlgorithmTest from '../components/AlgorithmTest';
 import { useState } from 'react'
+export default function HelloWorld(){
 
-function App() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("")
   const handleOnSubmit = async (e) => {
@@ -32,9 +30,8 @@ function App() {
       }
     
   }
-  return (
-    <div className="App">
-      <NavBar />
+    return(
+<div className="App">
       <header className="App-header">
         <img src={logo} alt=''/>
         <p>
@@ -76,8 +73,5 @@ function App() {
       </header>
       
     </div>
-   
-  );
+    )
 }
-
-export default App;

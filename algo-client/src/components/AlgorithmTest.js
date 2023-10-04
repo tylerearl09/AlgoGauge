@@ -1,18 +1,34 @@
-import Dropdown from 'react-bootstrap/Dropdown'
+import React from 'react'
+import Select from 'react-select'
 
-function AlgorithmTest () {
+
+const sortOptions = [
+    { value: 'Bubble Sort', label: 'Bubble Sort'},
+    { value: 'Insertion Sort', label: 'Insertion Sort'},
+    { value: 'Quick Sort', label: 'Quick Sort'},
+    { value: 'Merge Sort', label: 'Merge Sort'},
+    { value: 'Heap Sort', label: 'Heap Sort'},
+    { value: 'Selection Sort', label: 'Selection Sort'}
+]
+
+const modifiers = [
+    { value: 'Full Random', label: 'Full Random'},
+    { value: 'Partial Sort', label: 'Partial Sort'},
+    { value: 'Groups Sorted', label: 'Groups Sorted'},
+    { value: 'Reverse Sort', label: 'Reverse Sort'},
+    { value: 'Full Sort', label: 'Full Sort'},
+    { value: 'Repeats', label: 'Repeat'}
+]
+
+
+function AlgorithmTest (props) {
 
     return(
         <div>
-            <Dropdown>
-                <Dropdown.Toggle variant="success" id="dropdown-basic">Dropdown Button</Dropdown.Toggle>
-                <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Another Action</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-                </Dropdown.Menu>
-            </Dropdown>
-
+            <p>Algorithm #{props.number}</p>            
+            <Select options={sortOptions} placeholder='Choose your algorithm...'/>
+         
+            <Select options={modifiers} placeholder='Choose your modifier...'/>
         </div>
     );
 }

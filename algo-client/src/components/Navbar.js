@@ -1,7 +1,9 @@
+import '../App.css';
+
 function NavBar () {
 
     return(
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark ps-5">
+        <nav class="navbar navbar-custom navbar-expand-lg ps-5">
         <a class="navbar-brand" href="#">Aolguage</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -15,13 +17,13 @@ function NavBar () {
                 <a class="nav-link" href="https://scholar.google.com/citations?user=E0VPUtgAAAAJ&hl=en">About Brad</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Dropdown link
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="#">Action</a>
                 <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" href="#">Wazzup</a>
                 </div>
             </li>
             </ul>

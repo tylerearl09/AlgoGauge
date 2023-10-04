@@ -36,14 +36,15 @@ function App() {
     <div className="App">
       <NavBar />
       <header className="App-header">
-        <img src={logo}/>
+        <img src={logo} alt=''/>
         <p>
           Hello, Brad.
         </p>
+        <br></br>
         <form action="">
-        <input type="text" placeholder="name"
+        <input type="text" className="input-field" id='input-thing' placeholder="name"
         value={name} onChange={(e) => setName(e.target.value)} />
-        <input type="email" placeholder="email"
+        <input type="email" className="input-field" id='input-thing' placeholder="email"
         value={email} onChange={(e) => setEmail(e.target.value)} />
         <button type="submit"
         onClick={handleOnSubmit}>submit</button>
@@ -66,8 +67,12 @@ function App() {
             }
         }
         } >Test</button>        
-      </form> 
-      <AlgorithmTest />     
+      </form>
+      <br></br>
+      <div style={{display: 'flex', flexDirection: 'row', flexWrap:'wrap', justifyContent: 'space-between'}} >
+        <AlgorithmTest number={1}/>
+        <AlgorithmTest number={2}/> 
+      </div>  
       </header>
       
     </div>

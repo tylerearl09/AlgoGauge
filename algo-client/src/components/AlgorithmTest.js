@@ -1,6 +1,6 @@
 import React from 'react'
 import Select from 'react-select'
-
+import '../App.css';
 
 const sortOptions = [
     { value: 'Bubble Sort', label: 'Bubble Sort'},
@@ -21,14 +21,54 @@ const modifiers = [
 ]
 
 
+const customStyles = {
+    control: (base, state) => ({
+        ...base,
+        background: "#023950",
+        // Overwrittes the different states of border
+        borderColor: state.isFocused ? "yellow" : "green",
+        // Removes weird border around container
+        boxShadow: state.isFocused ? null : null,
+        "&:hover": {
+            // Overwrittes the different states of border
+            borderColor: state.isFocused ? "red" : "blue"
+        },
+        // Text Color, {This does nothing at the moment}
+        //color: "#FFFFFF",
+    }),
+    menu: base => ({
+        ...base,
+        // override border radius to match the box
+        borderRadius: 0,
+        // kill the gap
+        marginTop: 0
+    }),
+    menuList: base => ({
+        ...base,
+        background: "#023950",
+        // kill the white space on first and last option
+        padding: 0
+    }),
+    option: (styles, {isFocused, isSelected}) => ({
+        ...styles,
+        background: isFocused ? '#000000'
+                  : isSelected ? '#FF0000'
+                  : undefined,
+        // Text Color for the drop down options
+        color: "#FFFFFF",
+        zIndex: 1
+    }),
+};
+
+
 function AlgorithmTest (props) {
 
     return(
-        <div>
+        <div className="testing">
             <p>Algorithm #{props.number}</p>            
-            <Select options={sortOptions} placeholder='Choose your algorithm...'/>
+            <Select styles={customStyles} options={sortOptions} placeholder='Choose your algorithm...'/>
          
-            <Select options={modifiers} placeholder='Choose your modifier...'/>
+            <Select styles={customStyles} options={modifiers} placeholder='Choose your modifier...'/>
         </div>
     );
 }

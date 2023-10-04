@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+.bg-header {
+  background-color: #0E6B0E;
+}
+
+.App-header {
+  background-color: #172121;
+}
+
+p, a {
+  color: red;
+}
+
+.testing {
+  color: red;
+}

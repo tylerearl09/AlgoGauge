@@ -45,10 +45,7 @@
   background-color: #172121;
 }
 
-p, a {
-  color: red;
+.css-1dimb5e-singleValue, .css-1jqq78o-placeholder, p, a {
+  color: #D4F4DD !important;
 }
 
-.testing {
-  color: red;
-}

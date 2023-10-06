@@ -24,6 +24,7 @@ const modifiers = [
 const customStyles = {
     control: (base, state) => ({
         ...base,
+        // Change Background Color
         background: "#023950",
         // Overwrittes the different states of border
         borderColor: state.isFocused ? "yellow" : "green",
@@ -33,8 +34,6 @@ const customStyles = {
             // Overwrittes the different states of border
             borderColor: state.isFocused ? "red" : "blue"
         },
-        // Text Color, {This does nothing at the moment}
-        //color: "#FFFFFF",
     }),
     menu: base => ({
         ...base,
@@ -52,10 +51,10 @@ const customStyles = {
     option: (styles, {isFocused, isSelected}) => ({
         ...styles,
         background: isFocused ? '#000000'
-                  : isSelected ? '#FF0000'
+                  : isSelected ? '#028090'
                   : undefined,
         // Text Color for the drop down options
-        color: "#FFFFFF",
+        color: "#D4F4DD",
         zIndex: 1
     }),
 };

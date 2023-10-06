@@ -3,27 +3,27 @@ import '../App.css';
 function NavBar () {
 
     return(
-        <nav class="bg-header navbar navbar-custom navbar-expand-lg ps-5">
-        <a class="navbar-brand" href="#">Aolguage</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <nav className="bg-header navbar navbar-custom navbar-expand-lg ps-5">
+        <a className="navbar-brand" href="#">Aolguage</a>
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="#">History</a>
+        <div className="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul className="navbar-nav">
+            <li className="nav-item">
+                <a className="nav-link" href="#">History</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="https://scholar.google.com/citations?user=E0VPUtgAAAAJ&hl=en">About Brad</a>
+            <li className="nav-item">
+                <a className="nav-link" href="https://scholar.google.com/citations?user=E0VPUtgAAAAJ&hl=en">About Brad</a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <li className="nav-item dropdown">
+                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Dropdown link
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Wazzup</a>
+                <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a className="dropdown-item" href="#">Action</a>
+                <a className="dropdown-item" href="#">Another action</a>
+                <a className="dropdown-item" href="#">Wazzup</a>
                 </div>
             </li>
             </ul>

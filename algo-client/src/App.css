@@ -49,3 +49,35 @@
   color: #D4F4DD !important;
 }
 
+div.dropdown-menu.show {
+  border-radius: 10px;
+  border-color: #FFF;
+  background-color: #0E6B0E;
+  color: #D4F4DD;
+}
+
+.dropdown-item:hover {
+  background-color: #000000 !important;
+}
+
+form {
+  border: solid;
+  border-radius: 2px;
+  border-color: #000000;
+}
+
+form button {
+  background-color: #325970;
+  color: #FFFFFF;
+}
+
+form input {
+  background-color: #325970;
+  color: #FFFFFF;
+}
+
+form input::placeholder {
+  color: #AAAAAA;
+}
+
+

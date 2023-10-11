@@ -1,7 +1,7 @@
 import OptionContainer from "../components/OptionContainer";
 export default function Selection() {
   return (
-    <>
+    <div className="App-header">
       <div className="row mt-4 align-items-center">
         <div className="ms-5 ps-4 col-md-2">
           <label htmlFor="nameInput" className="form-label fw-bold display-6">
@@ -27,6 +27,6 @@ export default function Selection() {
           <button className="btn btn-success">Submit</button>
         </div>
       </div>
-    </>
+    </div>
   );
 }

@@ -24,6 +24,17 @@
   color: white;
 }
 
+.modal-content {
+  background-color: #4a3d07;
+  font-size: calc(10px + 2vmin);
+  background-color: #172121 !important;
+  color: white;
+}
+
+.modal-content h4 {
+  color: white;
+}
+
 .App-link {
   color: #61dafb;
 }

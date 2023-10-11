@@ -3,6 +3,9 @@ import SliderWithInputFormControl from "./SliderWithInputFormControl";
 import { useState } from "react";
 import ViewCodeModal from "./ViewCodeModal";
 import Button from "react-bootstrap/Button";
+import "../App.css"
+
+
 export default function OptionContainer(props) {
   const [algoName, setAlgoName] = useState("");
   const [modalShow, setModalShow] = useState(false);
@@ -25,6 +28,7 @@ export default function OptionContainer(props) {
           Show Code
         </Button>
         <ViewCodeModal
+          className="App-Header"
           name={algoName}
           show={modalShow}
           onHide={() => setModalShow(false)}

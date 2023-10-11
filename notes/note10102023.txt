@@ -1,0 +1,7 @@
+Possibly use radio buttons over drop down list
+Add additional information to the modifiers
+Add an option to switch from sorting to hashing
+Name needs to be more obvious
+Show code -> info with more information
+Lots of blank space
+

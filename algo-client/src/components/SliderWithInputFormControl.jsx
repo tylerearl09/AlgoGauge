@@ -23,7 +23,7 @@ function getMaxValue(algoName) {
       max = 2500;
       break;
     default:
-      max = 50;
+      max = 0;
       break;
   }
   return max;

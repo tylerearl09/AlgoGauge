@@ -40,6 +40,10 @@ body {
   color: white;
 }
 
+.modal-title {
+  color: white !important;
+}
+
 .App-link {
   color: #61dafb;
 }

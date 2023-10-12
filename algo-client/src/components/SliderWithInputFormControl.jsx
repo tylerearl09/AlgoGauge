@@ -59,6 +59,7 @@ export default function SliderWithInputFormControl(props) {
               max={max}
               min={min}
               step={step}
+              variant="primary"
             />
           </div>
           <div className="col-md-2 ms-2 mt-2">

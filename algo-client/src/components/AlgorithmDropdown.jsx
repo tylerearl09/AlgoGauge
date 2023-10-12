@@ -68,11 +68,12 @@ export default function AlgorithmDropdown(props) {
       />
       <p>Data Distribution:</p>
       <Select
-        styles={customStyles}
         options={modifiers}
         placeholder="Choose your modifier..."
         onChange={props.onModChange}
       />
+
+      <Select options={modifiers} placeholder="Choose your modifier..." />
     </div>
   );
 }

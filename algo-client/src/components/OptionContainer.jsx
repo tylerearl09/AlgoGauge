@@ -4,6 +4,7 @@ import { useState } from "react";
 import ViewCodeModal from "./ViewCodeModal";
 import Button from "react-bootstrap/Button";
 import "../App.css";
+import "../App.css";
 
 export default function OptionContainer(props) {
   const [modalShow, setModalShow] = useState(false);
@@ -25,7 +26,7 @@ export default function OptionContainer(props) {
 
   return (
     <>
-      <div className="col-md-5 border rounded border-primary m-3 p-3">
+      <div className="col-md-5 border-orange rounded-4 bg-dark m-3 p-3">
         <AlgorithmDropdown
           onAlgoChange={handleAlgoChange}
           onModChange={handleModChange}
@@ -40,9 +41,9 @@ export default function OptionContainer(props) {
             setDataAmount={handleDataChange}
           />
         </div>
-        <Button variant="primary" onClick={() => setModalShow(true)}>
+        <button className="btn btn-link" onClick={() => setModalShow(true)}>
           Show Code
-        </Button>
+        </button>
         <ViewCodeModal
           className="App-Header"
           name={algoName}

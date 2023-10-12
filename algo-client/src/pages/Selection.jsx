@@ -1,5 +1,6 @@
 import OptionContainer from "../components/OptionContainer";
 import "../App.css";
+
 export default function Selection() {
   return (
     <div>
@@ -12,7 +13,7 @@ export default function Selection() {
       </div>
 
       <div className="row justify-content-center my-3">
-        <div className="col-md-8">
+        <div className="col-md-12">
           <div className="container container-bg rounded-4 shadow-lg px-5">
             <div className="row py-5">
               <div className="col-md-5 fw-bold align-self-center h4 text-end">

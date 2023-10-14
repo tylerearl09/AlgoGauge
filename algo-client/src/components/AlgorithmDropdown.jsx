@@ -19,10 +19,17 @@ const modifiers = [
   { value: "Repeats", label: "Repeat" },
 ];
 
-export default function AlgorithmDropdown({ onChange, number }) {
+
+
+export default function AlgorithmDropdown(props) {
+
+  const onChange = (selectedOption) => {
+      props.onChange(props.number - 1, selectedOption.value);
+  };
+
   return (
     <div>
-      <p>Algorithm #{number}</p>
+      <p>Algorithm #{props.number}</p>
       <Select
         className="mb-2"
         options={sortOptions}

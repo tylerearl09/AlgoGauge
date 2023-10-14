@@ -1,6 +1,6 @@
 import AlgorithmDropdown from "./AlgorithmDropdown";
 import SliderWithInputFormControl from "./SliderWithInputFormControl";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ViewCodeModal from "./ViewCodeModal";
 import Button from "react-bootstrap/Button";
 import "../App.css";
@@ -9,6 +9,11 @@ export default function OptionContainer(props) {
   const [modalShow, setModalShow] = useState(false);
 
   const [algoName, setAlgoName] = useState();
+
+  const handleChange = (number, algorithm) => {
+    setAlgoName(algorithm);
+    props.onChange(number, algorithm);
+  };
 
   const handleAlgoChange = (algorithm) => {
     setAlgoName(algorithm.value);
@@ -26,11 +31,7 @@ export default function OptionContainer(props) {
   return (
     <>
       <div className="col-md-5 border rounded border-primary m-3 p-3">
-        <AlgorithmDropdown
-          onAlgoChange={handleAlgoChange}
-          onModChange={handleModChange}
-          number={props.number}
-        />
+        <AlgorithmDropdown onChange={handleChange} number={props.number} />
         <div className="mb-5">
           <label htmlFor="customRange2" className="form-label mt-3">
             # of Items:

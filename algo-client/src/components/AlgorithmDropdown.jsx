@@ -19,9 +19,11 @@ const modifiers = [
   { value: "Repeats", label: "Repeat" },
 ];
 
-
-
 export default function AlgorithmDropdown(props) {
+  const onChange = (selectedOption) => {
+    props.onChange(props.number - 1, selectedOption.value);
+  };
+
   return (
     <div>
       <p>Algorithm #{props.number}</p>
@@ -32,9 +34,11 @@ export default function AlgorithmDropdown(props) {
         onChange={props.onAlgoChange}
       />
       <p>Modifiers</p>
-      <Select options={modifiers} 
-      placeholder="Choose your modifier..."
-      onChange={props.onModChange} />
+      <Select
+        options={modifiers}
+        placeholder="Choose your modifier..."
+        onChange={props.onModChange}
+      />
     </div>
   );
 }

@@ -34,6 +34,18 @@ export default function Selection() {
     setDataAmount(temp);
   };
 
+  const handleModChange = (number, newModName) => {
+    let temp = modName;
+    temp[number] = newModName;
+    setModName(temp);
+  };
+
+  const handleDataAmountChange = (number, newDataAmount) => {
+    let temp = dataAmount;
+    temp[number] = newDataAmount;
+    setDataAmount(temp);
+  };
+
   async function handleOnSubmit() {
     let algoOne = algoName[0];
     let algoTwo = algoName[1];

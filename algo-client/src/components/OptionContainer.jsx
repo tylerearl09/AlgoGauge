@@ -1,6 +1,6 @@
 import AlgorithmDropdown from "./AlgorithmDropdown";
 import SliderWithInputFormControl from "./SliderWithInputFormControl";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ViewCodeModal from "./ViewCodeModal";
 import Button from "react-bootstrap/Button";
 import "../App.css";

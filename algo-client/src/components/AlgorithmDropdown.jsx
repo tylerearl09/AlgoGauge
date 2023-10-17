@@ -20,10 +20,6 @@ const modifiers = [
 ];
 
 export default function AlgorithmDropdown(props) {
-  const onChange = (selectedOption) => {
-    props.onChange(props.number - 1, selectedOption.value);
-  };
-
   return (
     <div>
       <p>Algorithm #{props.number}</p>

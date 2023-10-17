@@ -25,8 +25,12 @@ router.get("/:id", async (req, res) => {
 router.post("/", async (req, res) => {
   let newDocument = {
     name: req.body.name,
-    algorithm1: req.body.algoOne,
-    algorithm2: req.body.algoTwo,
+    algoOne: req.body.algoOne,
+    algoTwo: req.body.algoTwo,
+    modOne: req.body.modOne,
+    modTwo: req.body.modTwo,
+    amountOne: req.body.amountOne,
+    amountTwo: req.body.amountTwo
   };
   let collection = await db.collection("records");
   let result = await collection.insertOne(newDocument);

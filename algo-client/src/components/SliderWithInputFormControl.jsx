@@ -36,6 +36,11 @@ export default function SliderWithInputFormControl(props) {
   const [max, setMax] = useState(0);
   const [step, setStep] = useState(1);
 
+  const onChange = (amount) => {
+    setValue(amount.target.value);
+    props.setDataAmount(amount.target.value);
+  }
+
   useEffect(() => {
     setMax(getMaxValue(props.algoName));
     setValue(0);
@@ -49,7 +54,7 @@ export default function SliderWithInputFormControl(props) {
           <div className="col-md-9">
             <RangeSlider
               value={value}
-              onChange={(e) => setValue(e.target.value)}
+              onChange={onChange}
               readOnly
               max={max}
               min={min}

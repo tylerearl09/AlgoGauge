@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
 const Record = (props) => (
     <>
     <tr>
-        <td>{props.record.algoOne}</td>
+        <td>{props.record.name}</td>
+        <td>{props.record.algoOne}</td>        
+        <td>{props.record.modOne}</td>
+        <td>{props.record.amountOne}</td>
         <td>{props.record.algoTwo}</td>
+        <td>{props.record.modTwo}</td>
+        <td>{props.record.amountTwo}</td>
     </tr>
     {/* <tr>
         <td>{props.record.timeOne}</td>
@@ -53,8 +57,13 @@ export default function HistoryList(){
             <table className="table table-striped" style={{ marginTop:20}}>
                 <thead>
                     <tr>
-                        <th>Algorithm 1</th>
+                        <th>Name</th>
+                        <th>Algorithm 1</th>                        
+                        <th>Modification 1</th>
+                        <th>Amount 1</th>
                         <th>Algorithm 2</th>
+                        <th>Modification 1</th>
+                        <th>Amount 2</th>
                     </tr>
                 </thead>
                 <tbody>{recordList()}</tbody>

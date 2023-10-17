@@ -7,7 +7,7 @@ import NavBar from './Navbar';
 import {Route, Routes, useNavigate } from 'react-router-dom'
 
 
-function App() {
+const App = () => {
   
   return (
     <>

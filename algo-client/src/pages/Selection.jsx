@@ -1,9 +1,17 @@
 import OptionContainer from "../components/OptionContainer";
 import { useState } from "react";
+import { useNavigate } from "react-router";
+
 
 export default function Selection() {
 
+  const navigate = useNavigate();
+
   const [algoName, setAlgoName] = useState([]);
+
+  const [modName, setModName] = useState([]);
+
+  const [dataAmount, setDataAmount] = useState([]);
 
   const [name, setName] = useState();
 
@@ -11,19 +19,38 @@ export default function Selection() {
     
     let temp = algoName;
     temp[number] = newAlgorithmName;
-    setAlgoName(temp);   
+    setAlgoName(temp);
+
+  };
+
+  const handleModChange = (number, newModName) => {
+    let temp = modName;
+    temp[number] = newModName;
+    setModName(temp);
+   
+  };
+
+  const handleDataAmountChange = (number, newDataAmount) =>{
+    let temp = dataAmount;
+    temp[number] = newDataAmount;
+    setDataAmount(temp);
+
   };
 
 
   async function handleOnSubmit (e) {
     e.preventDefault();
 
-    console.log("Submit");
-
     let algoOne = algoName[0];
     let algoTwo = algoName[1];
+    let amountOne = dataAmount[0];
+    let amountTwo = dataAmount[1];
+    let modOne = modName[0];
+    let modTwo = modName[1];
 
-    const newTest = {name, algoOne, algoTwo}
+    const newTest = {name, algoOne, algoTwo, modOne, modTwo, amountOne, amountTwo}
+
+    console.log(newTest);
     
 
     await fetch("http://localhost:5000/record", {
@@ -40,6 +67,8 @@ export default function Selection() {
 
     setName("");
     setAlgoName([]);
+    setModName([]);
+    navigate("/history");
   }
 
 
@@ -62,9 +91,9 @@ export default function Selection() {
         </div>
       </div>
       <div className="row m-5 align-items-center">
-        <OptionContainer number={1} algoName={algoName[0]} onChange={handleNameChange}/>
+        <OptionContainer number={1} algoName={algoName[0]} onChange={handleNameChange} onModChange={handleModChange} handleDataAmountChange={handleDataAmountChange}/>
         <div className="col-md-1 text-center">VS</div>
-        <OptionContainer number={2} algoName={algoName[1]} onChange={handleNameChange}/>
+        <OptionContainer number={2} algoName={algoName[1]} onChange={handleNameChange} onModChange={handleModChange} handleDataAmountChange={handleDataAmountChange}/>
       </div>
       <div className="row align-items-center justify-content-end">
         <div className="col-md-3 text-center">

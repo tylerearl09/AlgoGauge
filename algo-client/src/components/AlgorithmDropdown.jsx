@@ -22,22 +22,19 @@ const modifiers = [
 
 
 export default function AlgorithmDropdown(props) {
-
-  const onChange = (selectedOption) => {
-      props.onChange(props.number - 1, selectedOption.value);
-  };
-
   return (
     <div>
       <p>Algorithm #{props.number}</p>
       <Select
-        className="mb-2"
+        className="mb-4"
         options={sortOptions}
         placeholder="Choose your algorithm..."
-        onChange={onChange}
+        onChange={props.onAlgoChange}
       />
-
-      <Select options={modifiers} placeholder="Choose your modifier..." />
+      <p>Modifiers</p>
+      <Select options={modifiers} 
+      placeholder="Choose your modifier..."
+      onChange={props.onModChange} />
     </div>
   );
 }

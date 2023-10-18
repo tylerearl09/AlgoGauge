@@ -1,5 +1,13 @@
 import OptionContainer from "../components/OptionContainer";
+import Button from "react-bootstrap/Button";
+import ViewQueueModal from "../components/ViewQueueModal"
+import { useState } from "react";
+
+
 export default function Selection() {
+  // Modal for the Queue
+  const [modalShow, setModalShow] = useState(false);
+
   return (
     <div className="App-header">
       <div className="row mt-5 align-items-center">
@@ -24,8 +32,16 @@ export default function Selection() {
       </div>
       <div className="row align-items-center justify-content-end">
         <div className="col-md-3 text-center">
-          <button className="btn btn-success">Submit</button>
+          <Button className="btn btn-success" onClick={() => 
+            setModalShow(true)
+          }>Submit</Button>
         </div>
+       <ViewQueueModal
+          className="App-Header"
+          name="Test"
+          show={modalShow}
+          onHide={() => setModalShow(false)}
+        />
       </div>
     </div>
   );

@@ -14,3 +14,24 @@
 .range-slider--primary::-webkit-slider-thumb {
     background: #d17f3f !important;
 }
+
+.btn-link {
+    color: #d17f3f !important;
+}
+
+.btn-link:hover{
+    color: #e8a664 !important;
+}
+
+.radio-container:hover{
+    transform: scale(1.05);
+}
+
+.radio-container{
+    transition: all .2s ease-in-out; 
+}
+
+.form-check-input:checked {
+    background-color: #d17f3f !important;
+    border-color: #d17f3f !important;
+}

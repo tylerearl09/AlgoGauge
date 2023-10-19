@@ -58,7 +58,7 @@ export default function SliderWithInputFormControl(props) {
               size="lg"
             />
           </div>
-          <div className="col-md-2 ms-2 mt-2">
+          <div className="col-md-2 ms-2 my-auto text-center">
             <label>{value}</label>
           </div>
         </div>

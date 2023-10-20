@@ -8,6 +8,7 @@ export default function ViewCodeModal(props) {
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered
+      className="modal-bg"
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">

@@ -2,6 +2,9 @@ import OptionContainer from "../components/OptionContainer";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 
+import Button from "react-bootstrap/Button";
+import ViewQueueModal from "../components/ViewQueueModal";
+
 export default function Selection() {
   const navigate = useNavigate();
 
@@ -70,6 +73,9 @@ export default function Selection() {
     navigate("/history");
   }
 
+  // Modal for the Queue
+  const [modalShow, setModalShow] = useState(false);
+
   return (
     <div className="App-header">
       <div className="row mt-5 align-items-center">
@@ -107,10 +113,20 @@ export default function Selection() {
       </div>
       <div className="row align-items-center justify-content-end">
         <div className="col-md-3 text-center">
-          <button className="btn btn-success" onClick={handleOnSubmit}>
+          <Button
+            className="btn btn-success"
+            onClick={() => setModalShow(true)}
+            onClick={handleOnSubmit}
+          >
             Submit
-          </button>
+          </Button>
         </div>
+        <ViewQueueModal
+          className="App-Header"
+          name="Test"
+          show={modalShow}
+          onHide={() => setModalShow(false)}
+        />
       </div>
     </div>
   );

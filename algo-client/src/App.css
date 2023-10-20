@@ -35,3 +35,7 @@
     background-color: #d17f3f !important;
     border-color: #d17f3f !important;
 }
+
+.modal-bg .modal-content {
+    background-color: #212529;
+}

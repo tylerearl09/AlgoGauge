@@ -34,9 +34,7 @@ export default function Selection() {
     setDataAmount(temp);
   };
 
-  async function handleOnSubmit(e) {
-    e.preventDefault();
-
+  async function handleOnSubmit() {
     let algoOne = algoName[0];
     let algoTwo = algoName[1];
     let amountOne = dataAmount[0];
@@ -56,7 +54,7 @@ export default function Selection() {
 
     console.log(newTest);
 
-    await fetch("http://localhost:5000/record", {
+    await fetch("http://localhost:4000/record", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -116,7 +114,6 @@ export default function Selection() {
           <Button
             className="btn btn-success"
             onClick={() => setModalShow(true)}
-            onClick={handleOnSubmit}
           >
             Submit
           </Button>
@@ -125,7 +122,10 @@ export default function Selection() {
           className="App-Header"
           name="Test"
           show={modalShow}
-          onHide={() => setModalShow(false)}
+          onHide={() => {
+            setModalShow(false);
+            handleOnSubmit();
+          }}
         />
       </div>
     </div>

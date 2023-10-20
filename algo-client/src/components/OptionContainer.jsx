@@ -15,6 +15,10 @@ export default function OptionContainer(props) {
     props.onChange(props.number - 1, algorithm.value);
   };
 
+  const handleDataChange = (amount) => {
+    props.handleDataAmountChange(props.number - 1, amount);
+  };
+
   const handleModChange = (mod) => {
     props.onModChange(props.number - 1, mod.value);
   };

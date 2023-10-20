@@ -29,7 +29,7 @@ export default function AlgorithmDropdown(props) {
         placeholder="Choose your algorithm..."
         onChange={props.onAlgoChange}
       />
-      <p>Modifiers</p>
+      <p>Data Distribution:</p>
       <Select
         options={modifiers}
         placeholder="Choose your modifier..."

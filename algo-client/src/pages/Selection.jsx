@@ -85,7 +85,6 @@ export default function Selection() {
             className="form-control border border-dark"
             name="nameInput"
             onChange={(e) => setName(e.target.value)}
-            onChange={(e) => setName(e.target.value)}
           />
         </div>
       </div>

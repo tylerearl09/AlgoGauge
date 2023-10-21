@@ -27,6 +27,7 @@ export default function Selection() {
   const handleModChange = (number, newModName) => {
     let temp = modName;
     temp[number] = newModName;
+    console.log(temp);
     setModName(temp);
   };
 
@@ -101,7 +102,7 @@ export default function Selection() {
               </div>
               <div className="col-md-6">
                 <select className="form-select">
-                  <option value="" disabled selected>
+                  <option value="" disabled defaultValue={""}>
                     Select a Category....
                   </option>
                   <option value="sorting">Sorting Algorithms</option>
@@ -146,7 +147,6 @@ export default function Selection() {
           </div>
         </div>
         <ViewQueueModal
-          className="App-Header"
           name="Test"
           show={modalShow}
           onHide={() => {

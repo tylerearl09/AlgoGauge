@@ -3,7 +3,6 @@ import SliderWithInputFormControl from "./SliderWithInputFormControl";
 import { useState } from "react";
 import ViewCodeModal from "./ViewCodeModal";
 import ModifierRadio from "./ModifierRadio";
-import Button from "react-bootstrap/Button";
 import "../App.css";
 import "../App.css";
 
@@ -14,6 +13,7 @@ export default function OptionContainer(props) {
 
   const handleAlgoChange = (algorithm) => {
     setAlgoName(algorithm.value);
+    console.log(algoName);
     props.onChange(props.number - 1, algorithm.value);
   };
 
@@ -34,9 +34,9 @@ export default function OptionContainer(props) {
         <hr className="mb-4" />
         <div className="row">
           <div className="col-md-8">
-            <AlgorithmDropdown onChange={handleNameChange} />
+            <AlgorithmDropdown onAlgoChange={handleAlgoChange} />
           </div>
-          <div className="col-md-4 align-self-end pb-1">
+          <div className="col-md-4 align-self-center mt-4 pb-1">
             <button
               className="btn btn-link fs-5"
               onClick={() => setModalShow(true)}
@@ -47,60 +47,114 @@ export default function OptionContainer(props) {
         </div>
         <div className="row mt-3">
           <div className="col-md-12">
-            <label className="font-monospace fs-5 pb-3">Modifier:</label>
+            <label className="font-monospace fs-5 pb-3">
+              Data Distribution:
+            </label>
             <div className="row">
               <ModifierRadio
                 number={props.number}
                 className="col-md-4"
                 labelName="Full Random"
+                onChange={handleModChange}
               />
               <ModifierRadio
                 number={props.number}
                 className="col-md-3"
                 labelName="Repeats"
+                onChange={handleModChange}
               />
               <ModifierRadio
                 number={props.number}
                 className="col-md-4"
                 labelName="Partial Sort"
+                onChange={handleModChange}
               />
               <ModifierRadio
                 number={props.number}
                 className="col-md-3"
                 labelName="Full Sort"
+                onChange={handleModChange}
               />
               <ModifierRadio
                 number={props.number}
                 className="col-md-4"
                 labelName="Groups Sorted"
+                onChange={handleModChange}
               />
               <ModifierRadio
                 number={props.number}
                 className="col-md-4"
                 labelName="Reverse Sort"
+                onChange={handleModChange}
               />
             </div>
           </div>
         </div>
-        <div className="mb-3">
+        <div className="mb-5">
           <label
             htmlFor="customRange2"
-            className="form-label font-monospace fs-5 mt-3"
+            className="form-label mt-3 fs-5 font-monospace"
           >
-        <AlgorithmDropdown
-          onAlgoChange={handleAlgoChange}
-          onModChange={handleModChange}
-          number={props.number}
-        />
-        <div className="mb-5">
-          <label htmlFor="customRange2" className="form-label mt-3">
-            # of Items:
+            Number of Items:
           </label>
-          <SliderWithInputFormControl algoName={algoName} />
+          <SliderWithInputFormControl
+            algoName={algoName}
+            setDataAmount={handleDataChange}
+          />
+        </div>
+
+        <div className="mb-5">
+          <label
+            htmlFor="customRange2"
+            className="form-label font-monospace fs-5 my-3"
+          >
+            Additional Options:
+          </label>
+          <div>
+            <div className="form-check form-check-inline">
+              <input
+                className="form-check-input"
+                type="radio"
+                name="inlineRadioOptions"
+                id="inlineRadio1"
+                value="option1"
+              />
+              <label className="form-check-label">1</label>
+            </div>
+            <div className="form-check form-check-inline">
+              <input
+                className="form-check-input"
+                type="radio"
+                name="inlineRadioOptions"
+                id="inlineRadio1"
+                value="option1"
+              />
+              <label className="form-check-label">2</label>
+            </div>
+            <div className="form-check form-check-inline">
+              <input
+                className="form-check-input"
+                type="radio"
+                name="inlineRadioOptions"
+                id="inlineRadio1"
+                value="option1"
+              />
+              <label className="form-check-label">3</label>
+            </div>
+            <div className="form-check form-check-inline">
+              <input
+                className="form-check-input"
+                type="radio"
+                name="inlineRadioOptions"
+                id="inlineRadio1"
+                value="option1"
+              />
+              <label className="form-check-label">4</label>
+            </div>
+          </div>
         </div>
 
         <ViewCodeModal
-          className="App-Header"
           name={algoName}
           show={modalShow}
           onHide={() => setModalShow(false)}

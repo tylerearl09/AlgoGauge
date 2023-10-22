@@ -1,6 +1,6 @@
 import AlgorithmDropdown from "./AlgorithmDropdown";
 import SliderWithInputFormControl from "./SliderWithInputFormControl";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ViewCodeModal from "./ViewCodeModal";
 import ModifierRadio from "./ModifierRadio";
 import "../App.css";
@@ -11,9 +11,10 @@ export default function OptionContainer(props) {
 
   const [algoName, setAlgoName] = useState();
 
+  const [modifier, setModifier] = useState("Default");
+
   const handleAlgoChange = (algorithm) => {
     setAlgoName(algorithm.value);
-    console.log(algoName);
     props.onChange(props.number - 1, algorithm.value);
   };
 
@@ -22,8 +23,15 @@ export default function OptionContainer(props) {
   };
 
   const handleModChange = (mod) => {
-    props.onModChange(props.number - 1, mod.value);
-  };
+    props.onModChange(props.number -1, mod);
+  }
+
+  const onOptionChange = (e) => {
+    setModifier(e.target.value);
+    console.log(e.target.value[0]);
+    console.log(e.target.value.slice(2));
+  }
+
 
   return (
     <>
@@ -55,37 +63,38 @@ export default function OptionContainer(props) {
                 number={props.number}
                 className="col-md-4"
                 labelName="Full Random"
-                onChange={handleModChange}
+                onChange={handleModChange}                             
               />
               <ModifierRadio
                 number={props.number}
                 className="col-md-3"
                 labelName="Repeats"
-                onChange={handleModChange}
+                onChange={handleModChange} 
               />
               <ModifierRadio
                 number={props.number}
                 className="col-md-4"
                 labelName="Partial Sort"
-                onChange={handleModChange}
+                onChange={handleModChange} 
               />
               <ModifierRadio
                 number={props.number}
                 className="col-md-3"
                 labelName="Full Sort"
-                onChange={handleModChange}
-              />
+                onChange={handleModChange} 
+              />              
               <ModifierRadio
                 number={props.number}
                 className="col-md-4"
                 labelName="Groups Sorted"
-                onChange={handleModChange}
+                onChange={handleModChange}                
               />
+              
               <ModifierRadio
                 number={props.number}
                 className="col-md-4"
                 labelName="Reverse Sort"
-                onChange={handleModChange}
+                onChange={handleModChange} 
               />
             </div>
           </div>
@@ -115,9 +124,10 @@ export default function OptionContainer(props) {
               <input
                 className="form-check-input"
                 type="radio"
-                name="inlineRadioOptions"
-                id="inlineRadio1"
-                value="option1"
+                name={"addtlOpt" + props.number}
+                id="inlineRadio0"
+                value={[props.number, "option0"]}               
+                onChange={onOptionChange}
               />
               <label className="form-check-label">1</label>
             </div>
@@ -125,9 +135,10 @@ export default function OptionContainer(props) {
               <input
                 className="form-check-input"
                 type="radio"
-                name="inlineRadioOptions"
+                name={"addtlOpt" + props.number}
                 id="inlineRadio1"
-                value="option1"
+                value={[props.number, "option1"]} 
+                onChange={onOptionChange}
               />
               <label className="form-check-label">2</label>
             </div>
@@ -135,9 +146,10 @@ export default function OptionContainer(props) {
               <input
                 className="form-check-input"
                 type="radio"
-                name="inlineRadioOptions"
-                id="inlineRadio1"
-                value="option1"
+                name={"addtlOpt" + props.number}
+                id="inlineRadio2"
+                value={[props.number, "option2"]} 
+                onChange={onOptionChange}
               />
               <label className="form-check-label">3</label>
             </div>
@@ -145,9 +157,10 @@ export default function OptionContainer(props) {
               <input
                 className="form-check-input"
                 type="radio"
-                name="inlineRadioOptions"
-                id="inlineRadio1"
-                value="option1"
+                name={"addtlOpt" + props.number}
+                id="inlineRadio3"
+                value={[props.number, "option3"]} 
+                onChange={onOptionChange}
               />
               <label className="form-check-label">4</label>
             </div>

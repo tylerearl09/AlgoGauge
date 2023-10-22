@@ -1,4 +1,11 @@
+
+
 export default function ModifierRadio(props) {
+
+    const onOptionChange = (e)=> {
+      props.onChange(e.target.value.slice(2))
+    }
+
   return (
     <div
       className={
@@ -12,6 +19,8 @@ export default function ModifierRadio(props) {
           className="form-check-input d-flex justify-self-center"
           type="radio"
           name={"modifier" + props.number}
+          value = {[props.number, props.labelName]}
+          onChange={onOptionChange}          
         />
       </label>
     </div>

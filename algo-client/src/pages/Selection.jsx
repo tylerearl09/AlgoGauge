@@ -27,7 +27,6 @@ export default function Selection() {
   const handleModChange = (number, newModName) => {
     let temp = modName;
     temp[number] = newModName;
-    console.log(temp);
     setModName(temp);
   };
 
@@ -57,7 +56,7 @@ export default function Selection() {
 
     console.log(newTest);
 
-    await fetch("http://localhost:4000/record", {
+    await fetch(`http://localhost:${process.env.REACT_APP_BACKEND_PORT}/record`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -23,7 +23,7 @@ export default function HistoryList() {
 
   useEffect(() => {
     async function getRecords() {
-      const response = await fetch(`http://localhost:4000/record/`);
+      const response = await fetch(`http://localhost:${process.env.REACT_APP_BACKEND_PORT}/record/`);
 
       if (!response.ok) {
         const message = `An error occured: ${response.statusText}`;

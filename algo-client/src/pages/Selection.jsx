@@ -18,7 +18,7 @@ export default function Selection() {
 
   const [name, setName] = useState();
 
-  const handleNameChange = (number, newAlgorithmName) => {
+  const handleAlgoNameChange = (number, newAlgorithmName) => {
     let temp = algoName;
     temp[number] = newAlgorithmName;
     setAlgoName(temp);
@@ -92,7 +92,7 @@ export default function Selection() {
             <div className="row py-5">
               <div className="col-md-4 fw-bold h4 text-end">Your name:</div>
               <div className="col-md-6">
-                <input type="text" className="form-control" />
+                <input type="text" className="form-control" onChange={(e)=> setName(e.target.value)} />
               </div>
             </div>
             <div className="row pb-5">
@@ -119,7 +119,7 @@ export default function Selection() {
             <OptionContainer
               number={1}
               algoName={algoName[0]}
-              onChange={handleNameChange}
+              onChange={handleAlgoNameChange}
               onModChange={handleModChange}
               handleDataAmountChange={handleDataAmountChange}
             />
@@ -129,7 +129,7 @@ export default function Selection() {
             <OptionContainer
               number={2}
               algoName={algoName[1]}
-              onChange={handleNameChange}
+              onChange={handleAlgoNameChange}
               onModChange={handleModChange}
               handleDataAmountChange={handleDataAmountChange}
             />

@@ -41,46 +41,50 @@ export default function ViewCodeModal(props) {
       case "bubble":
         return (
           <a href="https://1533221.mediaspace.kaltura.com/playlist/dedicated/1_t46nn1ew/1_o6ljflmf">
-            Bubble Video Example
+            Bubble Sort Video Example
           </a>
         );
       case "selection":
         return (
           <a href="https://1533221.mediaspace.kaltura.com/playlist/dedicated/1_t46nn1ew/1_o6ljflmf">
-            Selection Video Example
+            Selection Sort Video Example
           </a>
         );
 
       case "insertion":
         return (
           <a href="https://1533221.mediaspace.kaltura.com/playlist/dedicated/1_t46nn1ew/1_c05nym92">
-            Insertion Video Example
+            Insertion Sort Video Example
           </a>
         );
 
       case "quick":
         return (
           <a href="https://1533221.mediaspace.kaltura.com/playlist/dedicated/1_t46nn1ew/1_5gyy359h">
-            Quick Video Example
+            Quick Sort Video Example
           </a>
         );
 
       case "merge":
         return (
           <a href="https://1533221.mediaspace.kaltura.com/playlist/dedicated/1_t46nn1ew/1_wc6fsyrc">
-            Merge Video Example
+            Merge Sort Video Example
           </a>
         );
 
       case "heap":
         return (
           <a href="https://1533221.mediaspace.kaltura.com/playlist/dedicated/1_t46nn1ew/1_7grhcmq5">
-            Heap Video Example
+            Heap Sort Video Example
           </a>
         );
 
       default:
-        return "None Selected";
+        return (
+          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+            Video Example
+        </a>
+        )
     }
   }
 

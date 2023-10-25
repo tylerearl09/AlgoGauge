@@ -1,6 +1,6 @@
 import AlgorithmDropdown from "./AlgorithmDropdown";
 import SliderWithInputFormControl from "./SliderWithInputFormControl";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ViewCodeModal from "./ViewCodeModal";
 import ModifierRadio from "./ModifierRadio";
 import "../App.css";
@@ -28,8 +28,8 @@ export default function OptionContainer(props) {
 
   const onOptionChange = (e) => {
     setModifier(e.target.value);
-    console.log(e.target.value[0]);
-    console.log(e.target.value.slice(2));
+    // console.log(e.target.value[0]);
+    // console.log(e.target.value.slice(2));
   }
 
 

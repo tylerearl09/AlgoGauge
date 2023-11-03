@@ -23,15 +23,14 @@ export default function OptionContainer(props) {
   };
 
   const handleModChange = (mod) => {
-    props.onModChange(props.number -1, mod);
-  }
+    props.onModChange(props.number - 1, mod);
+  };
 
   const onOptionChange = (e) => {
     setModifier(e.target.value);
     console.log(e.target.value[0]);
     console.log(e.target.value.slice(2));
-  }
-
+  };
 
   return (
     <>
@@ -63,38 +62,38 @@ export default function OptionContainer(props) {
                 number={props.number}
                 className="col-md-4"
                 labelName="Full Random"
-                onChange={handleModChange}                             
+                onChange={handleModChange}
               />
               <ModifierRadio
                 number={props.number}
                 className="col-md-3"
                 labelName="Repeats"
-                onChange={handleModChange} 
+                onChange={handleModChange}
               />
               <ModifierRadio
                 number={props.number}
                 className="col-md-4"
                 labelName="Partial Sort"
-                onChange={handleModChange} 
+                onChange={handleModChange}
               />
               <ModifierRadio
                 number={props.number}
                 className="col-md-3"
                 labelName="Full Sort"
-                onChange={handleModChange} 
-              />              
+                onChange={handleModChange}
+              />
               <ModifierRadio
                 number={props.number}
                 className="col-md-4"
                 labelName="Groups Sorted"
-                onChange={handleModChange}                
+                onChange={handleModChange}
               />
-              
+
               <ModifierRadio
                 number={props.number}
                 className="col-md-4"
                 labelName="Reverse Sort"
-                onChange={handleModChange} 
+                onChange={handleModChange}
               />
             </div>
           </div>
@@ -126,7 +125,7 @@ export default function OptionContainer(props) {
                 type="radio"
                 name={"addtlOpt" + props.number}
                 id="inlineRadio0"
-                value={[props.number, "option0"]}               
+                value={[props.number, "option0"]}
                 onChange={onOptionChange}
               />
               <label className="form-check-label">1</label>
@@ -137,7 +136,7 @@ export default function OptionContainer(props) {
                 type="radio"
                 name={"addtlOpt" + props.number}
                 id="inlineRadio1"
-                value={[props.number, "option1"]} 
+                value={[props.number, "option1"]}
                 onChange={onOptionChange}
               />
               <label className="form-check-label">2</label>
@@ -148,7 +147,7 @@ export default function OptionContainer(props) {
                 type="radio"
                 name={"addtlOpt" + props.number}
                 id="inlineRadio2"
-                value={[props.number, "option2"]} 
+                value={[props.number, "option2"]}
                 onChange={onOptionChange}
               />
               <label className="form-check-label">3</label>
@@ -159,7 +158,7 @@ export default function OptionContainer(props) {
                 type="radio"
                 name={"addtlOpt" + props.number}
                 id="inlineRadio3"
-                value={[props.number, "option3"]} 
+                value={[props.number, "option3"]}
                 onChange={onOptionChange}
               />
               <label className="form-check-label">4</label>

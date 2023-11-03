@@ -56,13 +56,16 @@ export default function Selection() {
 
     console.log(newTest);
 
-    await fetch(`http://localhost:${process.env.REACT_APP_BACKEND_PORT}/record`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newTest),
-    }).catch((error) => {
+    await fetch(
+      `http://localhost:${process.env.REACT_APP_BACKEND_PORT}/record`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newTest),
+      }
+    ).catch((error) => {
       window.alert(error);
       return;
     });
@@ -85,37 +88,38 @@ export default function Selection() {
           </h2>
         </div>
       </div>
-
-      <div className="row justify-content-center my-3">
-        <div className="col-md-12">
-          <div className="container container-bg rounded-4 shadow-lg px-5">
-            <div className="row py-5">
-              <div className="col-md-4 fw-bold h4 text-end">Your name:</div>
-              <div className="col-md-6">
-                <input type="text" className="form-control" />
+      <div className="d-flex">
+        <div className="container container-bg shadow-lg rounded-4 py-5">
+          <div className="d-flex justify-content-between"></div>
+          <div className="row">
+            <div className="col-md-6">
+              <div className="row align-items-center">
+                <div className="col-md-4 text-end">
+                  <label className="fw-bold h4 ">Your name:</label>
+                </div>
+                <div className="col-md-5">
+                  <input type="text" className="form-control" />
+                </div>
               </div>
             </div>
-            <div className="row pb-5">
-              <div className="col-md-4 fw-bold h4 text-end">
-                Algorithm type:
-              </div>
-              <div className="col-md-6">
-                <select className="form-select">
-                  <option value="" disabled defaultValue={""}>
-                    Select a Category....
-                  </option>
-                  <option value="sorting">Sorting Algorithms</option>
-                  <option value="hashing">Hashing Algorithms</option>
-                </select>
+            <div className="col-md-6">
+              <div className="row align-items-center">
+                <div className="col-md-5 text-end">
+                  <label className="fw-bold h4 ">Algorithm type:</label>
+                </div>
+                <div className="col-md-5">
+                  <select className="form-select">
+                    <option value="" disabled defaultValue={""}>
+                      Select a Category....
+                    </option>
+                    <option value="sorting">Sorting Algorithms</option>
+                    <option value="hashing">Hashing Algorithms</option>
+                  </select>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div className="d-flex align-items-center">
-        <div className="container container-bg shadow-lg rounded-4 py-5 h-auto">
-          <div className="row p-5 mx-auto justify-content-center align-items-center">
+          <div className="row pb-5 pt-2 mx-auto justify-content-center align-items-center">
             <OptionContainer
               number={1}
               algoName={algoName[0]}

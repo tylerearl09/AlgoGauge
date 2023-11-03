@@ -12,7 +12,7 @@ export default function Selection() {
 
   const [algoName, setAlgoName] = useState([]);
 
-  const [modName, setModName] = useState([]);
+  const [modName, setModName] = useState(["Full Random", "Full Random"]);
 
   const [dataAmount, setDataAmount] = useState([]);
 

@@ -88,12 +88,11 @@ export default function OptionContainer(props) {
                 className="col-md-4"
                 labelName="Groups Sorted"
                 onChange={handleModChange}                
-              />
-              
+              />              
               <ModifierRadio
                 number={props.number}
                 className="col-md-4"
-                labelName="Reverse Sort"
+                labelName="Reverse Full Sort"
                 onChange={handleModChange} 
               />
             </div>

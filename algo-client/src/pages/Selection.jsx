@@ -89,36 +89,30 @@ export default function Selection() {
         </div>
       </div>
       <div className="d-flex">
-        <div className="container container-bg shadow-lg rounded-4 py-5">
-          <div className="d-flex justify-content-between"></div>
-          <div className="row">
-            <div className="col-md-6">
-              <div className="row align-items-center">
-                <div className="col-md-4 text-end">
-                  <label className="fw-bold h4 ">Your name:</label>
-                </div>
-                <div className="col-md-5">
-                  <input type="text" className="form-control" />
-                </div>
+        <div className="container container-bg shadow-lg rounded-4 pb-5 pt-3">
+          <div className="row justify-content-between">
+            <div className="col-md-5">
+              <div className="input-group">
+                <label className="fw-bold input-group-text">Your name:</label>
+                <input type="text" className="form-control" />
               </div>
             </div>
-            <div className="col-md-6">
-              <div className="row align-items-center">
-                <div className="col-md-5 text-end">
-                  <label className="fw-bold h4 ">Algorithm type:</label>
-                </div>
-                <div className="col-md-5">
-                  <select className="form-select">
-                    <option value="" disabled defaultValue={""}>
-                      Select a Category....
-                    </option>
-                    <option value="sorting">Sorting Algorithms</option>
-                    <option value="hashing">Hashing Algorithms</option>
-                  </select>
-                </div>
+            <div className="col-md-5">
+              <div className="input-group">
+                <label className="fw-bold input-group-text">
+                  Algorithm type:
+                </label>
+                <select className="form-select">
+                  <option value="" disabled defaultValue={""}>
+                    Select a Category....
+                  </option>
+                  <option value="sorting">Sorting Algorithms</option>
+                  <option value="hashing">Hashing Algorithms</option>
+                </select>
               </div>
             </div>
           </div>
+          <hr className="mt-4 mb-2" />
           <div className="row pb-5 pt-2 mx-auto justify-content-center align-items-center">
             <OptionContainer
               number={1}

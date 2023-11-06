@@ -39,3 +39,7 @@
 .modal-bg .modal-content {
     background-color: #212529;
 }
+
+.react-select > div{
+    margin: -1px;
+}

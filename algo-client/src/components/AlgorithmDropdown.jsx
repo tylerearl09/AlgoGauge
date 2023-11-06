@@ -52,18 +52,15 @@ const selectStyles = {
 
 export default function AlgorithmDropdown(props) {
   return (
-    <div>
-      <label className="font-monospace fs-5 pb-3">Algorithm:</label>
-      <div className="testing">
+    <div className="input-group">
+      <label className="font-monospace input-group-text">Algorithm:</label>
+      <div className="form-control react-select p-0">
         <Select
-          className="mb-4"
           options={sortOptions}
-          placeholder="Choose your algorithm..."
+          placeholder="Select..."
           onChange={props.onAlgoChange}
           styles={selectStyles}
         />
-
-        {/* <Select options={modifiers} placeholder="Choose your modifier..." /> */}
       </div>
     </div>
   );

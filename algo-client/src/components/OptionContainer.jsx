@@ -34,23 +34,21 @@ export default function OptionContainer(props) {
 
   return (
     <>
-      <div className="col-md-5 border-orange rounded-4 bg-dark m-3 p-3">
+      <div className="col-lg-5 border-orange rounded-4 bg-dark m-3 p-3">
         <h3 className="font-monospace text-center">
           Algorithm # {props.number}
         </h3>
         <hr className="mb-4" />
-        <div className="row">
+        <div className="row align-content-center justify-content-between mb-4">
           <div className="col-md-8">
             <AlgorithmDropdown onAlgoChange={handleAlgoChange} />
           </div>
-          <div className="col-md-4 align-self-center mt-4 pb-1">
-            <button
-              className="btn btn-link fs-5"
-              onClick={() => setModalShow(true)}
-            >
-              More Info
-            </button>
-          </div>
+          <button
+            className="btn btn-link col-md-4 fs-5"
+            onClick={() => setModalShow(true)}
+          >
+            More Info
+          </button>
         </div>
         <div className="row mt-3">
           <div className="col-md-12">
@@ -66,7 +64,7 @@ export default function OptionContainer(props) {
               />
               <ModifierRadio
                 number={props.number}
-                className="col-md-3"
+                className="col-md-4"
                 labelName="Repeats"
                 onChange={handleModChange}
               />
@@ -78,7 +76,7 @@ export default function OptionContainer(props) {
               />
               <ModifierRadio
                 number={props.number}
-                className="col-md-3"
+                className="col-md-4"
                 labelName="Full Sort"
                 onChange={handleModChange}
               />
@@ -88,7 +86,6 @@ export default function OptionContainer(props) {
                 labelName="Groups Sorted"
                 onChange={handleModChange}
               />
-
               <ModifierRadio
                 number={props.number}
                 className="col-md-4"
@@ -98,7 +95,7 @@ export default function OptionContainer(props) {
             </div>
           </div>
         </div>
-        <div className="mb-5">
+        <div className="mb-2">
           <label
             htmlFor="customRange2"
             className="form-label mt-3 fs-5 font-monospace"
@@ -114,7 +111,7 @@ export default function OptionContainer(props) {
         <div className="mb-5">
           <label
             htmlFor="customRange2"
-            className="form-label font-monospace fs-5 my-3"
+            className="form-label font-monospace fs-5 mb-3"
           >
             Additional Options:
           </label>

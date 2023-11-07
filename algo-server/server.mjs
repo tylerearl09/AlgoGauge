@@ -10,6 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/record", records);
+app.use("/test", records);
 
 // start the Express server
 app.listen(PORT, () => {

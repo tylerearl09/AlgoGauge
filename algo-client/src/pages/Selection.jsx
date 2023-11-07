@@ -56,7 +56,7 @@ export default function Selection() {
 
     console.log(newTest);
 
-    await fetch(`http://localhost:${process.env.REACT_APP_BACKEND_PORT}/record`, {
+    await fetch(`http://localhost:${process.env.REACT_APP_BACKEND_PORT}/record/test`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

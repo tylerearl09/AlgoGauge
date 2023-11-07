@@ -1,6 +1,8 @@
 import express from "express";
 import db from "../db/conn.mjs";
 import { ObjectId } from "mongodb";
+//const { exec } = require('child_process');
+import { exec } from 'child_process'
 
 const router = express.Router();
 
@@ -12,17 +14,18 @@ router.get("/", async (req, res) => {
 });
 
 // This section will help you get a single record by id
-router.get("/:id", async (req, res) => {
-  let collection = await db.collection("records");
-  let query = {_id: new ObjectId(req.params.id)};
-  let result = await collection.findOne(query);
+//router.get("/:id", async (req, res) => {
+//  let collection = await db.collection("records");
+//  let query = {_id: new ObjectId(req.params.id)};
+//  let result = await collection.findOne(query);
 
-  if (!result) res.send("Not found").status(404);
-  else res.send(result).status(200);
-});
+//  if (!result) res.send("Not found").status(404);
+//  else res.send(result).status(200);
+//});
 
 // This section will help you create a new record.
 router.post("/", async (req, res) => {
+  console.log("/ Post")
   let newDocument = {
     name: req.body.name,
     algoOne: req.body.algoOne,
@@ -38,30 +41,87 @@ router.post("/", async (req, res) => {
 });
 
 // This section will help you update a record by id.
-router.patch("/:id", async (req, res) => {
-  const query = { _id: new ObjectId(req.params.id) };
-  const updates =  {
-    $set: {
-      name: req.body.name,
-      position: req.body.position,
-      level: req.body.level
-    }
-  };
-
-  let collection = await db.collection("records");
-  let result = await collection.updateOne(query, updates);
-
-  res.send(result).status(200);
-});
+//router.patch("/:id", async (req, res) => {
+//  const query = { _id: new ObjectId(req.params.id) };
+//  const updates =  {
+//    $set: {
+//      name: req.body.name,
+//      position: req.body.position,
+//      level: req.body.level
+//    }
+//  };
+//
+//  let collection = await db.collection("records");
+//  let result = await collection.updateOne(query, updates);
+//
+//  res.send(result).status(200);
+//});
 
 // This section will help you delete a record
-router.delete("/:id", async (req, res) => {
-  const query = { _id: new ObjectId(req.params.id) };
+//router.delete("/:id", async (req, res) => {
+//  const query = { _id: new ObjectId(req.params.id) };
+//
+//  const collection = db.collection("records");
+//  let result = await collection.deleteOne(query);
+//
+//  res.send(result).status(200);
+//});
 
-  const collection = db.collection("records");
-  let result = await collection.deleteOne(query);
 
-  res.send(result).status(200);
+
+router.post("/test", async (req, resp) => {
+  try {
+    console.log("/test") 
+    console.log(req.body.algoOne) 
+
+    //exec("powershell cat helloWorld.cpp", (error, stdout, stderr) => {
+    exec("wsl ./AlgoGauge -j " + parseToCMDArgument(req.body), (error, stdout, stderr) => {
+      if (error) {
+        console.log(`error: ${error.message}`);
+        return;
+      }
+      if (stderr) {
+        console.log(`stderr: ${stderr}`);
+        return;
+      }
+      console.log(`stdout: ${stdout}`);
+      let output = `${stdout}`
+      //resp.send( JSON.stringify(`${stdout}`) );
+      const sendData = async (data) => {
+        //console.log("Inside Async");
+        let collection = await db.collection("testResults");
+        let result = await collection.insertOne(data);
+      } 
+
+      let filtered = JSON.parse(output);
+
+      sendData(filtered)
+
+
+      resp.send(output).status(204);
+    });
+  } catch (e) {
+    console.log(e);
+    resp.send("Something Went Wrong");
+  }
 });
+
+function parseToCMDArgument(body) {
+    let name = body.name
+    let algoOne = body.algoOne
+    let algoTwo = body.algoTwo
+    let modOne = body.modOne
+    let modTwo = body.modTwo
+    let amountOne = body.amountOne
+    let amountTwo = body.amountTwo
+
+    // Still need to convert modOne and ModTwo to arguments
+
+    let output = `--algo ${algoOne} --length ${amountOne} -r --algo ${algoTwo} --length ${amountTwo} -r`
+
+    console.log(output);
+
+    return output;
+}
 
 export default router;

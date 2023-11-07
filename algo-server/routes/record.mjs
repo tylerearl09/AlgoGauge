@@ -117,11 +117,31 @@ function parseToCMDArgument(body) {
 
     // Still need to convert modOne and ModTwo to arguments
 
-    let output = `--algo ${algoOne} --length ${amountOne} -r --algo ${algoTwo} --length ${amountTwo} -r`
+    let output = `--algo ${algoOne} --length ${amountOne} ${convertModParams(modOne)} --algo ${algoTwo} --length ${amountTwo} ${convertModParams(modTwo)}`
 
     console.log(output);
 
     return output;
+}
+
+function convertModParams(mod) {
+
+  switch (mod.toLowerCase()) {
+    case 'full random':
+      return '-r' 
+    case 'repeats':
+      return '-e'
+    case 'partial sort':
+      return '-e'
+    case 'full sort':
+      return '-o'
+    case 'reverse sort':
+      return '-s'
+    case 'groups sorted':
+      return '-c'
+    default:
+      return '-r' 
+  }
 }
 
 export default router;

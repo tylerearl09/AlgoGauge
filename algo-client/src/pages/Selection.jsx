@@ -55,17 +55,13 @@ export default function Selection() {
     };
 
     console.log(newTest);
-
-    await fetch(
-      `http://localhost:${process.env.REACT_APP_BACKEND_PORT}/record`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newTest),
-      }
-    ).catch((error) => {
+    await fetch(`http://localhost:${process.env.REACT_APP_BACKEND_PORT}/record/test`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newTest),
+    }).catch((error) => {
       window.alert(error);
       return;
     });

@@ -23,8 +23,8 @@ export default function OptionContainer(props) {
   };
 
   const handleModChange = (mod) => {
-    props.onModChange(props.number -1, mod);
-  }
+    props.onModChange(props.number - 1, mod);
+  };
 
   const onOptionChange = (e) => {
     setModifier(e.target.value);
@@ -35,23 +35,21 @@ export default function OptionContainer(props) {
 
   return (
     <>
-      <div className="col-md-5 border-orange rounded-4 bg-dark m-3 p-3">
+      <div className="col-lg-5 border-orange rounded-4 bg-dark m-3 p-3">
         <h3 className="font-monospace text-center">
           Algorithm # {props.number}
         </h3>
         <hr className="mb-4" />
-        <div className="row">
+        <div className="row align-content-center justify-content-between mb-4">
           <div className="col-md-8">
             <AlgorithmDropdown onAlgoChange={handleAlgoChange} />
           </div>
-          <div className="col-md-4 align-self-center mt-4 pb-1">
-            <button
-              className="btn btn-link fs-5"
-              onClick={() => setModalShow(true)}
-            >
-              More Info
-            </button>
-          </div>
+          <button
+            className="btn btn-link col-md-4 fs-5"
+            onClick={() => setModalShow(true)}
+          >
+            More Info
+          </button>
         </div>
         <div className="row mt-3">
           <div className="col-md-12">
@@ -63,42 +61,42 @@ export default function OptionContainer(props) {
                 number={props.number}
                 className="col-md-4"
                 labelName="Full Random"
-                onChange={handleModChange}                             
+                onChange={handleModChange}
               />
               <ModifierRadio
                 number={props.number}
-                className="col-md-3"
+                className="col-md-4"
                 labelName="Repeats"
-                onChange={handleModChange} 
+                onChange={handleModChange}
               />
               <ModifierRadio
                 number={props.number}
                 className="col-md-4"
                 labelName="Partial Sort"
-                onChange={handleModChange} 
+                onChange={handleModChange}
               />
               <ModifierRadio
                 number={props.number}
-                className="col-md-3"
+                className="col-md-4"
                 labelName="Full Sort"
-                onChange={handleModChange} 
-              />              
+                onChange={handleModChange}
+              />
               <ModifierRadio
                 number={props.number}
                 className="col-md-4"
                 labelName="Groups Sorted"
-                onChange={handleModChange}                
-              />              
+                onChange={handleModChange}
+              />
               <ModifierRadio
                 number={props.number}
                 className="col-md-4"
-                labelName="Reverse Full Sort"
-                onChange={handleModChange} 
+                labelName="Reverse Sort"
+                onChange={handleModChange}
               />
             </div>
           </div>
         </div>
-        <div className="mb-5">
+        <div className="mb-2">
           <label
             htmlFor="customRange2"
             className="form-label mt-3 fs-5 font-monospace"
@@ -114,7 +112,7 @@ export default function OptionContainer(props) {
         <div className="mb-5">
           <label
             htmlFor="customRange2"
-            className="form-label font-monospace fs-5 my-3"
+            className="form-label font-monospace fs-5 mb-3"
           >
             Additional Options:
           </label>
@@ -125,7 +123,7 @@ export default function OptionContainer(props) {
                 type="radio"
                 name={"addtlOpt" + props.number}
                 id="inlineRadio0"
-                value={[props.number, "option0"]}               
+                value={[props.number, "option0"]}
                 onChange={onOptionChange}
               />
               <label className="form-check-label">1</label>
@@ -136,7 +134,7 @@ export default function OptionContainer(props) {
                 type="radio"
                 name={"addtlOpt" + props.number}
                 id="inlineRadio1"
-                value={[props.number, "option1"]} 
+                value={[props.number, "option1"]}
                 onChange={onOptionChange}
               />
               <label className="form-check-label">2</label>
@@ -147,7 +145,7 @@ export default function OptionContainer(props) {
                 type="radio"
                 name={"addtlOpt" + props.number}
                 id="inlineRadio2"
-                value={[props.number, "option2"]} 
+                value={[props.number, "option2"]}
                 onChange={onOptionChange}
               />
               <label className="form-check-label">3</label>
@@ -158,7 +156,7 @@ export default function OptionContainer(props) {
                 type="radio"
                 name={"addtlOpt" + props.number}
                 id="inlineRadio3"
-                value={[props.number, "option3"]} 
+                value={[props.number, "option3"]}
                 onChange={onOptionChange}
               />
               <label className="form-check-label">4</label>

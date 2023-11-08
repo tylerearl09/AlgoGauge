@@ -56,13 +56,16 @@ export default function Selection() {
 
     console.log(newTest);
 
-    await fetch(`http://localhost:${process.env.REACT_APP_BACKEND_PORT}/record`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newTest),
-    }).catch((error) => {
+    await fetch(
+      `http://localhost:${process.env.REACT_APP_BACKEND_PORT}/record`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newTest),
+      }
+    ).catch((error) => {
       window.alert(error);
       return;
     });
@@ -85,21 +88,20 @@ export default function Selection() {
           </h2>
         </div>
       </div>
-
-      <div className="row justify-content-center my-3">
-        <div className="col-md-12">
-          <div className="container container-bg rounded-4 shadow-lg px-5">
-            <div className="row py-5">
-              <div className="col-md-4 fw-bold h4 text-end">Your name:</div>
-              <div className="col-md-6">
-                <input type="text" className="form-control" onChange={(e)=> setName(e.target.value)} />
+      <div className="d-flex">
+        <div className="container container-bg shadow-lg rounded-4 pb-5 pt-3">
+          <div className="row justify-content-between">
+            <div className="col-md-5">
+              <div className="input-group">
+                <label className="fw-bold input-group-text">Your name:</label>
+                <input type="text" className="form-control" />
               </div>
             </div>
-            <div className="row pb-5">
-              <div className="col-md-4 fw-bold h4 text-end">
-                Algorithm type:
-              </div>
-              <div className="col-md-6">
+            <div className="col-md-5">
+              <div className="input-group">
+                <label className="fw-bold input-group-text">
+                  Algorithm type:
+                </label>
                 <select className="form-select">
                   <option value="" disabled defaultValue={""}>
                     Select a Category....
@@ -110,12 +112,8 @@ export default function Selection() {
               </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div className="d-flex align-items-center">
-        <div className="container container-bg shadow-lg rounded-4 py-5 h-auto">
-          <div className="row p-5 mx-auto justify-content-center align-items-center">
+          <hr className="mt-4 mb-2" />
+          <div className="row pb-5 pt-2 mx-auto justify-content-center align-items-center">
             <OptionContainer
               number={1}
               algoName={algoName[0]}

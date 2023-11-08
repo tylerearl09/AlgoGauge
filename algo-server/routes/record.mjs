@@ -74,7 +74,7 @@ router.post("/test", async (req, resp) => {
     console.log("Running Algo Test") 
 
     //exec("powershell cat helloWorld.cpp", (error, stdout, stderr) => {
-    exec("wsl ./AlgoGauge -j " + parseToCMDArgument(req.body), (error, stdout, stderr) => {
+    exec("wsl ./AlgoGauge -j " + parseToCMDArgument(req.body), {timeout:30000}, (error, stdout, stderr) => {
       if (error) {
         console.log(`error: ${error.message}`);
         return;

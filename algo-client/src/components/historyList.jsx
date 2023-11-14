@@ -4,12 +4,15 @@ const Record = (props) => (
   <>
     <tr>
       <td>{props.record.name}</td>
-      <td>{props.record.algoOne}</td>
-      <td>{props.record.modOne}</td>
-      <td>{props.record.amountOne}</td>
-      <td>{props.record.algoTwo}</td>
-      <td>{props.record.modTwo}</td>
-      <td>{props.record.amountTwo}</td>
+      <td>{props.record.algorithms[0].algorithmName}</td>
+      <td>{props.record.algorithms[0].algorithmOption}</td>
+      <td>{props.record.algorithms[0].algorithmLength}</td>
+      <td>{props.record.algorithms[0].algorithmRunTime_ms}</td>
+      <td>{props.record.algorithms[1].algorithmName}</td>
+      <td>{props.record.algorithms[1].algorithmOption}</td>
+      <td>{props.record.algorithms[1].algorithmLength}</td>
+      <td>{props.record.algorithms[1].algorithmRunTime_ms}</td>
+      
     </tr>
     {/* <tr>
         <td>{props.record.timeOne}</td>
@@ -56,9 +59,11 @@ export default function HistoryList() {
             <th>Algorithm 1</th>
             <th>Modification 1</th>
             <th>Amount 1</th>
+            <th>Run Time (ms)</th>
             <th>Algorithm 2</th>
-            <th>Modification 1</th>
+            <th>Modification 2</th>
             <th>Amount 2</th>
+            <th>Run Time (ms)</th>
           </tr>
         </thead>
         <tbody>{recordList()}</tbody>

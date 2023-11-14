@@ -8,7 +8,7 @@ const router = express.Router();
 
 // This section will help you get a list of all the records.
 router.get("/", async (req, res) => {
-  let collection = await db.collection("records");
+  let collection = await db.collection("testResults");
   let results = await collection.find({}).toArray();
   res.send(results).status(200);
 });
@@ -83,12 +83,15 @@ router.post("/test", async (req, resp) => {
         console.log(`stderr: ${stderr}`);
         return;
       }
-      console.log(`stdout: ${stdout}`);
+      // console.log(`stdout: ${stdout}`);
       let output = `${stdout}`
       //resp.send( JSON.stringify(`${stdout}`) );
       const sendData = async (data) => {
         //console.log("Inside Async");
         let collection = await db.collection("testResults");
+        console.log(data)
+        data.name = req.body.name
+        console.log(data)
         let result = await collection.insertOne(data);
       } 
 
@@ -106,7 +109,6 @@ router.post("/test", async (req, resp) => {
 });
 
 function parseToCMDArgument(body) {
-    let name = body.name
     let algoOne = body.algoOne
     let algoTwo = body.algoTwo
     let modOne = body.modOne

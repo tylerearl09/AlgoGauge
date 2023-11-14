@@ -27,22 +27,22 @@ function getMaxValue(algoName) {
   let max = 4294967295;
   switch (algoName) {
     case "bubble":
-      max = 10000;
+      max = 1000;
       break;
     case "insertion":
-      max = 1250000002;
+      max = 12500;
       break;
     case "quick":
-      max = 4294967295;
+      max = 42945;
       break;
     case "merge":
-      max = 2355281902;
+      max = 2355;
       break;
     case "heap":
-      max = 4829102929;
+      max = 4829;
       break;
     case "selection":
-      max = 502919299;
+      max = 5029;
       break;
     default:
       max = 0;

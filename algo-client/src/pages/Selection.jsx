@@ -54,7 +54,6 @@ export default function Selection() {
       amountTwo,
     };
 
-    console.log(newTest);
     await fetch(`http://localhost:${process.env.REACT_APP_BACKEND_PORT}/record/test`, {
       method: "POST",
       headers: {
@@ -90,7 +89,10 @@ export default function Selection() {
             <div className="col-md-5">
               <div className="input-group">
                 <label className="fw-bold input-group-text">Your name:</label>
-                <input type="text" className="form-control" />
+                <input type="text" 
+                className="form-control"
+                onChange = {(e) => setName(e.target.value)}
+                />
               </div>
             </div>
             <div className="col-md-5">

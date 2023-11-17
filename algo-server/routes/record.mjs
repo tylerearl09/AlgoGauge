@@ -80,8 +80,10 @@ router.post("/test", async (req, resp) => {
     exec("wsl ./AlgoGauge -j " + parseToCMDArgument(req.body), {timeout:300}, (error, stdout, stderr) => {
       if (error) {
         console.log(`error: ${error.message}`);
-        resp.send("Time Out: Please enter a smaller value").status(416);
-        return;
+        //resp.send("Time Out: Please enter a smaller value").status(416);
+        return resp.json().then((body) => {
+          throw new Error("Timeout")
+        })
       }
       if (stderr) {
         console.log(`stderr: ${stderr}`);

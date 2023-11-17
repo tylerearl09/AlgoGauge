@@ -61,10 +61,8 @@ export default function Selection() {
       },
       body: JSON.stringify(newTest),
     }).catch((error) => {
-      window.alert(error);
-      return;
-    });
-
+      window.alert(error.message)
+    })
     setName("");
     setAlgoName([]);
     setModName([]);

@@ -134,7 +134,9 @@ export default function Selection() {
             <div className="col-md-3 text-center">
               <Button
                 className="btn btn-lg btn-success"
-                onClick={() => setModalShow(true)}
+                onClick={() => {
+                  handleOnSubmit();
+                  setModalShow(true)}}
               >
                 Run Tests!
               </Button>
@@ -146,7 +148,6 @@ export default function Selection() {
           show={modalShow}
           onHide={() => {
             setModalShow(false);
-            handleOnSubmit();
           }}
         />
       </div>

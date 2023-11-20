@@ -2,43 +2,26 @@ import React, { useState, useEffect } from "react";
 import RangeSlider from "react-bootstrap-range-slider";
 import { Form } from "react-bootstrap";
 
-let stepValues = [];
-
 function getMaxValue(algoName) {
   let max = 0;
   switch (algoName) {
     case "bubble":
       max = 1000;
-      stepValues = [0, 10, 150, 500, 625, 750, 880, 900, 925, 1000];
       break;
     case "insertion":
       max = 12500;
-      stepValues = [
-        0, 10, 325, 650, 1000, 1750, 2500, 3900, 5600, 7500, 10000, 12500,
-      ];
       break;
     case "quick":
-      max = 402945;
-      stepValues = [
-        0, 10, 950, 1500, 5000, 8950, 12500, 22500, 75000, 125000, 323000,
-        402945,
-      ];
+      max = 402950;
       break;
     case "merge":
-      max = 2355;
-      stepValues = [0, 15, 25, 78, 125, 500, 829, 1000, 1250, 1750, 2000, 2355];
+      max = 2400;
       break;
     case "heap":
-      max = 4829;
-      stepValues = [
-        0, 25, 50, 75, 100, 200, 400, 800, 1200, 2000, 2800, 3500, 4000, 4829,
-      ];
+      max = 4830;
       break;
     case "selection":
-      max = 50299;
-      stepValues = [
-        0, 25, 50, 75, 100, 200, 1000, 2500, 10000, 15000, 35000, 42500, 50299,
-      ];
+      max = 50300;
       break;
     default:
       max = 0;
@@ -69,7 +52,7 @@ export default function SliderWithInputFormControl(props) {
   useEffect(() => {
     setMax(getMaxValue(props.algoName));
     setValue(0);
-    setStep(max / 5);
+    setStep(max / 10);
   }, [props.algoName, max]);
 
   return (
@@ -85,7 +68,6 @@ export default function SliderWithInputFormControl(props) {
               max={max}
               min={min}
               step={step}
-              list="yo"
               variant="primary"
               size="lg"
             />

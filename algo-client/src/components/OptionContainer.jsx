@@ -30,8 +30,7 @@ export default function OptionContainer(props) {
     setModifier(e.target.value);
     // console.log(e.target.value[0]);
     // console.log(e.target.value.slice(2));
-  }
-
+  };
 
   return (
     <>
@@ -109,7 +108,7 @@ export default function OptionContainer(props) {
           />
         </div>
 
-        <div className="mb-5">
+        <div className="mb-3">
           <label
             htmlFor="customRange2"
             className="form-label font-monospace fs-5 mb-3"

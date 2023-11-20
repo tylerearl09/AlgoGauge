@@ -15,11 +15,11 @@
     background: #d17f3f !important;
 }
 
-.btn-link {
+.btn-link, .orange-link {
     color: #d17f3f !important;
 }
 
-.btn-link:hover{
+.btn-link:hover, .orange-link:hover{
     color: #e8a664 !important;
 }
 

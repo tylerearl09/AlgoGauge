@@ -54,13 +54,16 @@ export default function Selection() {
       amountTwo,
     };
 
-    await fetch(`http://localhost:${process.env.REACT_APP_BACKEND_PORT}/record/test`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newTest),
-    }).catch((error) => {
+    await fetch(
+      `http://localhost:${process.env.REACT_APP_BACKEND_PORT}/record/test`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newTest),
+      }
+    ).catch((error) => {
       window.alert(error);
       return;
     });
@@ -84,14 +87,15 @@ export default function Selection() {
         </div>
       </div>
       <div className="d-flex">
-        <div className="container container-bg shadow-lg rounded-4 pb-5 pt-3">
+        <div className="container container-bg shadow-lg rounded-4 pb-5 pt-4">
           <div className="row justify-content-between">
             <div className="col-md-5">
               <div className="input-group">
                 <label className="fw-bold input-group-text">Your name:</label>
-                <input type="text" 
-                className="form-control"
-                onChange = {(e) => setName(e.target.value)}
+                <input
+                  type="text"
+                  className="form-control"
+                  onChange={(e) => setName(e.target.value)}
                 />
               </div>
             </div>
@@ -136,7 +140,8 @@ export default function Selection() {
                 className="btn btn-lg btn-success"
                 onClick={() => {
                   handleOnSubmit();
-                  setModalShow(true)}}
+                  setModalShow(true);
+                }}
               >
                 Run Tests!
               </Button>

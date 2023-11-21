@@ -89,10 +89,8 @@ router.post("/test", async (req, resp) => {
       //resp.send( JSON.stringify(`${stdout}`) );
       const sendData = async (data) => {
         //console.log("Inside Async");
-        let collection = await db.collection("testResults");
-        console.log(data)
+        let collection = await db.collection("testResults");     
         data.name = req.body.name
-        console.log(data)
         let result = await collection.insertOne(data);
       } 
 
@@ -105,7 +103,7 @@ router.post("/test", async (req, resp) => {
     });
   } catch (e) {
     console.log(e);
-    resp.send("Something Went Wrong");
+    resp.send(e);
   }
 });
 

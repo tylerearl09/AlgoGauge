@@ -1,9 +1,11 @@
 import HelloWorld from "./pages/HelloWorld";
 import Selection from "./pages/Selection";
+import History from "./pages/History";
+import Results from "./pages/Results"
 import NavBar from "./components/Navbar";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import History from "./pages/History";
+
 
 function App() {
   return (
@@ -13,6 +15,7 @@ function App() {
         <Route exact path="/" element={<Selection />} />
         <Route exact path="/hello" element={<HelloWorld />} />
         <Route exact path="/history" element={<History />} />
+        <Route exact path="/results" element={<Results />} />
       </Routes>
     </div>
   );

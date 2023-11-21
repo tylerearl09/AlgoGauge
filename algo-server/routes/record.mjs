@@ -71,28 +71,29 @@ router.post("/", async (req, res) => {
 
 router.post("/test", async (req, resp) => {
   try {
-    console.log("Running Algo Test") 
+    console.log("Entering Test Function") 
 
+    console.log("Starting Test")
     //exec("powershell cat helloWorld.cpp", (error, stdout, stderr) => {
-    exec("wsl ./AlgoGauge -j " + parseToCMDArgument(req.body), {timeout:300}, (error, stdout, stderr) => {
+    exec("wsl ./AlgoGauge -j " + parseToCMDArgument(req.body), {timeout:30000}, (error, stdout, stderr) => {
       if (error) {
         console.log(`error: ${error.message}`);
         //resp.send("Time Out: Please enter a smaller value").status(416);
-        return resp.json().then((body) => {
-          throw new Error("Timeout")
-        })
+        //return resp.json({status:"error", message:"Timeout"})
+        return error;
       }
       if (stderr) {
         console.log(`stderr: ${stderr}`);
         return;
       }
-      // console.log(`stdout: ${stdout}`);
+
+      console.log("Test Complete: Gathering Results")
+
       let output = `${stdout}`
       //resp.send( JSON.stringify(`${stdout}`) );
       const sendData = async (data) => {
         //console.log("Inside Async");
         let collection = await db.collection("testResults");
-        console.log(data)
         data.name = req.body.name
         console.log(data)
         let result = await collection.insertOne(data);
@@ -100,6 +101,7 @@ router.post("/test", async (req, resp) => {
 
       let filtered = JSON.parse(output);
 
+      console.log("Uploading results to DB")
       sendData(filtered)
 
 
@@ -123,6 +125,7 @@ function parseToCMDArgument(body) {
 
     let output = `--algo ${algoOne} --length ${amountOne} ${convertModParams(modOne)} --algo ${algoTwo} --length ${amountTwo} ${convertModParams(modTwo)}`
 
+    console.log("Command Line Argument:")
     console.log(output);
 
     return output;

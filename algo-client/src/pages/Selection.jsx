@@ -8,6 +8,7 @@ import Button from "react-bootstrap/Button";
 import ViewQueueModal from "../components/ViewQueueModal";
 
 export default function Selection(props) {
+  const timeout_time = 30000;
   const navigate = useNavigate();
 
   const [algoName, setAlgoName] = useState([]);
@@ -54,6 +55,13 @@ export default function Selection(props) {
       amountTwo,
     };
 
+    let errorCaught = false;
+
+    const controller = new AbortController();
+
+    const timeoutId = setTimeout(() => controller.abort(), timeout_time);
+
+    //await fetch(`http://localhost:${process.env.REACT_APP_BACKEND_PORT}/record/test`, {
     const response = await fetch(
       `http://localhost:${process.env.REACT_APP_BACKEND_PORT}/record/test`,
       {
@@ -62,18 +70,34 @@ export default function Selection(props) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(newTest),
+        signal: controller.signal,
       }
-    ).catch((error) => {
-      window.alert(error);
-      return;
-    });
-    const results = await response.json();
-    props.onResultsChange(results);
-
-    setName("");
-    setAlgoName([]);
-    setModName([]);
-    navigate("/results");
+    )
+      .catch((error) => {
+        // Caught timeout error
+        //console.log("Error Caught: " + error)
+        errorCaught = true;
+        //window.alert(error.message)
+        console.log("Error Caught");
+        //return;
+      })
+      .then((response) => {
+        // Handle the internal timeout
+        clearTimeout(timeoutId);
+      });
+    console.log("Test Back");
+    if (!errorCaught) {
+      setName("");
+      setAlgoName([]);
+      setModName([]);
+      navigate("/history");
+    } else {
+      // Hide the Queue
+      setModalShow(false);
+      // Show error about timeout
+      // --- Convert to modal, or just clean up in general
+      window.alert("Test timed out, please lower values");
+    }
   }
 
   // Modal for the Queue

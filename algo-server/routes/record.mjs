@@ -6,6 +6,9 @@ import { exec } from 'child_process'
 
 const router = express.Router();
 
+let filtered = ""
+let output = ""
+
 // This section will help you get a list of all the records.
 router.get("/", async (req, res) => {
   let collection = await db.collection("testResults");
@@ -25,7 +28,7 @@ router.get("/", async (req, res) => {
 
 // This section will help you create a new record.
 router.post("/", async (req, res) => {
-  console.log("/ Post")
+ 
   let newDocument = {
     name: req.body.name,
     algoOne: req.body.algoOne,
@@ -35,7 +38,7 @@ router.post("/", async (req, res) => {
     amountOne: req.body.amountOne,
     amountTwo: req.body.amountTwo
   };
-  let collection = await db.collection("records");
+  let collection = db.collection("records");
   let result = await collection.insertOne(newDocument);
   res.send(result).status(204);
 });
@@ -85,19 +88,18 @@ router.post("/test", async (req, resp) => {
         return;
       }
       // console.log(`stdout: ${stdout}`);
-      let output = `${stdout}`
+      output = `${stdout}`
       //resp.send( JSON.stringify(`${stdout}`) );
       const sendData = async (data) => {
         //console.log("Inside Async");
-        let collection = await db.collection("testResults");     
+        let collection = db.collection("testResults");     
         data.name = req.body.name
-        let result = await collection.insertOne(data);
+        await collection.insertOne(data);
       } 
 
-      let filtered = JSON.parse(output);
+      filtered = JSON.parse(output);
 
-      sendData(filtered)
-
+      sendData(filtered);
 
       resp.send(output).status(204);
     });
@@ -106,6 +108,7 @@ router.post("/test", async (req, resp) => {
     resp.send(e);
   }
 });
+
 
 function parseToCMDArgument(body) {
     let algoOne = body.algoOne
@@ -117,11 +120,11 @@ function parseToCMDArgument(body) {
 
     // Still need to convert modOne and ModTwo to arguments
 
-    let output = `--algo ${algoOne} --length ${amountOne} ${convertModParams(modOne)} --algo ${algoTwo} --length ${amountTwo} ${convertModParams(modTwo)}`
+    let execString = `--algo ${algoOne} --length ${amountOne} ${convertModParams(modOne)} --algo ${algoTwo} --length ${amountTwo} ${convertModParams(modTwo)}`
 
-    console.log(output);
+   
 
-    return output;
+    return execString;
 }
 
 function convertModParams(mod) {

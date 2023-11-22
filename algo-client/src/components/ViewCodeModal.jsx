@@ -1,5 +1,6 @@
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import "../App.css";
 
 export default function ViewCodeModal(props) {
   function getAlgoDescription(algoName) {
@@ -40,51 +41,72 @@ export default function ViewCodeModal(props) {
     switch (algoName) {
       case "bubble":
         return (
-          <a href="https://1533221.mediaspace.kaltura.com/playlist/dedicated/1_t46nn1ew/1_o6ljflmf">
+          <a
+            className="orange-link"
+            href="https://1533221.mediaspace.kaltura.com/playlist/dedicated/1_t46nn1ew/1_o6ljflmf"
+          >
             Bubble Sort Video Example
           </a>
         );
       case "selection":
         return (
-          <a href="https://1533221.mediaspace.kaltura.com/playlist/dedicated/1_t46nn1ew/1_o6ljflmf">
+          <a
+            className="orange-link"
+            href="https://1533221.mediaspace.kaltura.com/playlist/dedicated/1_t46nn1ew/1_o6ljflmf"
+          >
             Selection Sort Video Example
           </a>
         );
 
       case "insertion":
         return (
-          <a href="https://1533221.mediaspace.kaltura.com/playlist/dedicated/1_t46nn1ew/1_c05nym92">
+          <a
+            className="orange-link"
+            href="https://1533221.mediaspace.kaltura.com/playlist/dedicated/1_t46nn1ew/1_c05nym92"
+          >
             Insertion Sort Video Example
           </a>
         );
 
       case "quick":
         return (
-          <a href="https://1533221.mediaspace.kaltura.com/playlist/dedicated/1_t46nn1ew/1_5gyy359h">
+          <a
+            className="orange-link"
+            href="https://1533221.mediaspace.kaltura.com/playlist/dedicated/1_t46nn1ew/1_5gyy359h"
+          >
             Quick Sort Video Example
           </a>
         );
 
       case "merge":
         return (
-          <a href="https://1533221.mediaspace.kaltura.com/playlist/dedicated/1_t46nn1ew/1_wc6fsyrc">
+          <a
+            className="orange-link"
+            href="https://1533221.mediaspace.kaltura.com/playlist/dedicated/1_t46nn1ew/1_wc6fsyrc"
+          >
             Merge Sort Video Example
           </a>
         );
 
       case "heap":
         return (
-          <a href="https://1533221.mediaspace.kaltura.com/playlist/dedicated/1_t46nn1ew/1_7grhcmq5">
+          <a
+            className="orange-link"
+            href="https://1533221.mediaspace.kaltura.com/playlist/dedicated/1_t46nn1ew/1_7grhcmq5"
+          >
             Heap Sort Video Example
           </a>
         );
 
       default:
         return (
-          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+          <a
+            className="orange-link"
+            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+          >
             Video Example
-        </a>
-        )
+          </a>
+        );
     }
   }
 

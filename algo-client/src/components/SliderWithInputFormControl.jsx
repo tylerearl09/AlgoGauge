@@ -2,29 +2,8 @@ import React, { useState, useEffect } from "react";
 import RangeSlider from "react-bootstrap-range-slider";
 import { Form } from "react-bootstrap";
 
-function LogSlider(options) {
-  options = options || {};
-  this.minpos = options.minpos || 0;
-  this.maxpos = options.maxpos || 100;
-  this.minlval = Math.log(options.minval || 1);
-  this.maxlval = Math.log(options.maxval || 100000);
-
-  this.scale = (this.maxlval - this.minlval) / (this.maxpos - this.minpos);
-}
-
-LogSlider.prototype = {
-  // Calculate value from a slider position
-  value: function (position) {
-    return Math.exp((position - this.minpos) * this.scale + this.minlval);
-  },
-  // Calculate slider position from a value
-  position: function (value) {
-    return this.minpos + (Math.log(value) - this.minlval) / this.scale;
-  },
-};
-
 function getMaxValue(algoName) {
-  let max = 4294967295;
+  let max = 0;
   switch (algoName) {
     case "bubble":
       max = 1000;
@@ -33,16 +12,16 @@ function getMaxValue(algoName) {
       max = 12500;
       break;
     case "quick":
-      max = 42945;
+      max = 402950;
       break;
     case "merge":
-      max = 2355;
+      max = 2400;
       break;
     case "heap":
-      max = 4829;
+      max = 4830;
       break;
     case "selection":
-      max = 5029;
+      max = 50300;
       break;
     default:
       max = 0;
@@ -53,10 +32,10 @@ function getMaxValue(algoName) {
 
 export default function SliderWithInputFormControl(props) {
   let min = 0;
-  let maxTextBox = 4294967295;
+  let maxTextBox = 4294967294;
   const [value, setValue] = useState(min);
   const [max, setMax] = useState(0);
-  const step = 1;
+  const [step, setStep] = useState(0);
 
   const onChange = (amount) => {
     setValue(amount.target.value);
@@ -65,13 +44,15 @@ export default function SliderWithInputFormControl(props) {
 
   const onNumChange = (amount) => {
     let valToSet =
-      amount.target.value > maxTextBox ? 4294967295 : amount.target.value;
+      amount.target.value > maxTextBox ? 4294967294 : amount.target.value;
     setValue(valToSet);
+    props.setDataAmount(amount.target.value);
   };
 
   useEffect(() => {
     setMax(getMaxValue(props.algoName));
     setValue(0);
+    setStep(max / 10);
   }, [props.algoName, max]);
 
   return (

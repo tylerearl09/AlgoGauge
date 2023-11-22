@@ -129,7 +129,7 @@ function parseToCMDArgument(body) {
     console.log("Command Line Argument:")
     console.log(output);
 
-    return execString;
+    return output;
 }
 
 function convertModParams(mod) {

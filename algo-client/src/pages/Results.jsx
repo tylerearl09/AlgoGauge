@@ -1,7 +1,7 @@
 import "../App.css";
 import ResultContainer from "../components/ResultContainer"
 
-export default function Results(props){    
+export default function Results(){    
     let results = localStorage.getItem("results")
     let jsonObj = JSON.parse(results)
 

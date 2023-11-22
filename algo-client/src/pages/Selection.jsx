@@ -7,7 +7,7 @@ import { useNavigate } from "react-router";
 import Button from "react-bootstrap/Button";
 import ViewQueueModal from "../components/ViewQueueModal";
 
-export default function Selection(props) {
+export default function Selection() {
   const timeout_time = 30000;
   const navigate = useNavigate();
 
@@ -60,7 +60,7 @@ export default function Selection(props) {
     const controller = new AbortController();
 
     const timeoutId = setTimeout(() => controller.abort(), timeout_time);
-
+    let testResults = ""
     //await fetch(`http://localhost:${process.env.REACT_APP_BACKEND_PORT}/record/test`, {
     const response = await fetch(
       `http://localhost:${process.env.REACT_APP_BACKEND_PORT}/record/test`,
@@ -84,13 +84,17 @@ export default function Selection(props) {
       .then((response) => {
         // Handle the internal timeout
         clearTimeout(timeoutId);
+        testResults = response;     
       });
     console.log("Test Back");
     if (!errorCaught) {
+      
+      const results = await testResults.json();
+      localStorage.setItem("results", JSON.stringify(results.algorithms))
       setName("");
       setAlgoName([]);
       setModName([]);
-      navigate("/history");
+      navigate("/results");
     } else {
       // Hide the Queue
       setModalShow(false);

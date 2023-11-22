@@ -57,39 +57,8 @@ export default function Selection() {
 
     let errorCaught = false;
 
-<<<<<<< HEAD
 
     const controller = new AbortController()
-
-    const timeoutId = setTimeout(() => controller.abort(), timeout_time)
-
-    //await fetch(`http://localhost:${process.env.REACT_APP_BACKEND_PORT}/record/test`, {
-    await fetch(`http://localhost:${process.env.REACT_APP_BACKEND_PORT}/record/test`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newTest),
-      signal: controller.signal,
-    }).catch((error) => {
-      // Caught timeout error
-      //console.log("Error Caught: " + error)
-      errorCaught = true;
-      //window.alert(error.message)
-      console.log("Error Caught")
-      //return;
-    }).then(response => {
-      // Handle the internal timeout
-      clearTimeout(timeoutId)
-    })
-    console.log("Test Back")
-    if(!errorCaught) {
-      setName("");
-      setAlgoName([]);
-      setModName([]);
-      navigate("/history");
-=======
-    const controller = new AbortController();
 
     const timeoutId = setTimeout(() => controller.abort(), timeout_time);
     let testResults = ""

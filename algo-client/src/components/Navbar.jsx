@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom"
 function NavBar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark ps-5 navbar-text">
-      <a className="navbar-brand navbar-text fs-5 font-monospace" href="/">
+      <Link className="navbar-brand navbar-text fs-5 font-monospace" to="/">
         Algoguage
-      </a>
+      </Link>
       <button
         className="navbar-toggler"
         type="button"
@@ -18,27 +19,27 @@ function NavBar() {
       <div className="collapse navbar-collapse" id="navbarNavDropdown">
         <ul className="navbar-nav">
           <li className="nav-item">
-            <a className="nav-link" href="/history">
+            <Link className="nav-link" to="/history">
               History
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/results">
+            <Link className="nav-link" to="/results">
               Results
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/hello">
+            <Link className="nav-link" to="/hello">
               Test
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a
+            <Link
               className="nav-link"
-              href="https://scholar.google.com/citations?user=E0VPUtgAAAAJ&hl=en"
+              to="https://scholar.google.com/citations?user=E0VPUtgAAAAJ&hl=en"
             >
               About Brad
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

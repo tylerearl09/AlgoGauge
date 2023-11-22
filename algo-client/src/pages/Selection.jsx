@@ -7,7 +7,7 @@ import { useNavigate } from "react-router";
 import Button from "react-bootstrap/Button";
 import ViewQueueModal from "../components/ViewQueueModal";
 
-export default function Selection() {
+export default function Selection(props) {
   const navigate = useNavigate();
 
   const [algoName, setAlgoName] = useState([]);
@@ -54,7 +54,7 @@ export default function Selection() {
       amountTwo,
     };
 
-    await fetch(
+    const response = await fetch(
       `http://localhost:${process.env.REACT_APP_BACKEND_PORT}/record/test`,
       {
         method: "POST",
@@ -67,11 +67,13 @@ export default function Selection() {
       window.alert(error);
       return;
     });
+    const results = await response.json();
+    props.onResultsChange(results);
 
     setName("");
     setAlgoName([]);
     setModName([]);
-    navigate("/history");
+    navigate("/results");
   }
 
   // Modal for the Queue

@@ -3,6 +3,13 @@ import ResultContainer from "../components/ResultContainer"
 
 export default function Results(){    
     let results = localStorage.getItem("results")
+    if(!results)
+    {
+        return(
+            <div>You have not run any tests yet</div>
+        )
+    }
+
     let jsonObj = JSON.parse(results)
 
     const checkWinnerFunc = (num) => {
@@ -17,8 +24,7 @@ export default function Results(){
         <div className="row pb-5 pt-2 mx-auto justify-content-center align-items-center">
             <ResultContainer id={1} algoName={jsonObj[0].algorithmName} amount={jsonObj[0].algorithmLength} mod={jsonObj[0].algorithmOption} runTime={jsonObj[0].algorithmRunTime_ms} winner={checkWinnerFunc(0)}/>
             <ResultContainer id={2} algoName={jsonObj[1].algorithmName} amount={jsonObj[1].algorithmLength} mod={jsonObj[1].algorithmOption} runTime={jsonObj[1].algorithmRunTime_ms} winner={checkWinnerFunc(1)}/>
-        </div>
-        
+        </div>        
         </>
     )
 

@@ -1,28 +1,33 @@
 import React, { useEffect, useState } from "react";
 import "../App.css";
+import { useNavigate } from "react-router-dom"
 
-const Record = (props) => (
-  <>
-    <tr>
-      <td>{props.record.name}</td>
-      <td>{props.record.algorithms[0].algorithmName}</td>
-      <td>{props.record.algorithms[0].algorithmOption}</td>
-      <td>{props.record.algorithms[0].algorithmLength}</td>
-      <td>{props.record.algorithms[0].algorithmRunTime_ms}</td>
-      <td>{props.record.algorithms[1].algorithmName}</td>
-      <td>{props.record.algorithms[1].algorithmOption}</td>
-      <td>{props.record.algorithms[1].algorithmLength}</td>
-      <td>{props.record.algorithms[1].algorithmRunTime_ms}</td>
-    </tr>
-    {/* <tr>
-        <td>{props.record.timeOne}</td>
-        <td>{props.record.timeTwo}</td>
-    </tr> */}
-  </>
-);
+
 
 export default function HistoryList() {
   const [records, setRecords] = useState([]);
+  const navigate = useNavigate();
+
+  const recordClicked = (props)=> {
+    localStorage.setItem("results", JSON.stringify(props.record.algorithms));   
+    navigate("/results");
+  }
+  
+  const Record = (props) => (
+    <>
+      <tr onClick= {()=> recordClicked(props)}>
+        <td>{props.record.name}</td>
+        <td>{props.record.algorithms[0].algorithmName}</td>
+        <td>{props.record.algorithms[0].algorithmOption}</td>
+        <td>{props.record.algorithms[0].algorithmLength}</td>
+        <td>{props.record.algorithms[0].algorithmRunTime_ms}</td>
+        <td>{props.record.algorithms[1].algorithmName}</td>
+        <td>{props.record.algorithms[1].algorithmOption}</td>
+        <td>{props.record.algorithms[1].algorithmLength}</td>
+        <td>{props.record.algorithms[1].algorithmRunTime_ms}</td>
+      </tr>
+    </>
+  );
 
   useEffect(() => {
     async function getRecords() {
@@ -47,9 +52,9 @@ export default function HistoryList() {
 
   function recordList() {
     return records.map((record) => {
-      return <Record record={record} key={record._id} />;
+      return <Record record={record} key={record._id}/>;
     });
-  }
+  }  
 
   return (
     <div>
@@ -61,7 +66,7 @@ export default function HistoryList() {
         </div>
       </div>
       <div className="d-flex justify-content-center border-orange rounded shadow-lg w-75 mx-auto mt-3">
-        <table className="table table-striped px-2">
+        <table className="table table-striped px-2 table-hover">
           <thead>
             <tr>
               <th>Name</th>

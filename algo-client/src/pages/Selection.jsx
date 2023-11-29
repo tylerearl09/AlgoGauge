@@ -179,7 +179,8 @@ export default function Selection() {
               <Button
                 className="btn btn-lg btn-success"
                 onClick={() => {
-                  handleOnSubmit();                  
+                  handleOnSubmit();
+                  setModalShow(true);                 
                 }}
               >
                 Run Tests!

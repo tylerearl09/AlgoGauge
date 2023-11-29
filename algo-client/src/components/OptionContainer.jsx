@@ -26,11 +26,9 @@ export default function OptionContainer(props) {
     props.onModChange(props.number - 1, mod);
   };
 
-  const onOptionChange = (e) => {
-    setModifier(e.target.value);
-    // console.log(e.target.value[0]);
-    // console.log(e.target.value.slice(2));
-  };
+  // const onOptionChange = (e) => {
+  //   setModifier(e.target.value);
+  // };
 
   return (
     <>
@@ -108,7 +106,7 @@ export default function OptionContainer(props) {
           />
         </div>
 
-        <div className="mb-3">
+        {/* <div className="mb-3">
           <label
             htmlFor="customRange2"
             className="form-label font-monospace fs-5 mb-3"
@@ -161,7 +159,7 @@ export default function OptionContainer(props) {
               <label className="form-check-label">4</label>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <ViewCodeModal
           name={algoName}

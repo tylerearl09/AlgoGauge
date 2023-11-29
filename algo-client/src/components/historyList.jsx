@@ -9,9 +9,8 @@ export default function HistoryList() {
   const navigate = useNavigate();
 
   const recordClicked = (props)=> {
-    // localStorage.setItem("results", JSON.stringify(e.target.record));
-    localStorage.setItem("results", JSON.stringify(props.record.algorithms))    
-    navigate("/results")
+    localStorage.setItem("results", JSON.stringify(props.record.algorithms));   
+    navigate("/results");
   }
   
   const Record = (props) => (
@@ -55,9 +54,7 @@ export default function HistoryList() {
     return records.map((record) => {
       return <Record record={record} key={record._id}/>;
     });
-  }
-
-  
+  }  
 
   return (
     <div>
@@ -69,7 +66,7 @@ export default function HistoryList() {
         </div>
       </div>
       <div className="d-flex justify-content-center border-orange rounded shadow-lg w-75 mx-auto mt-3">
-        <table className="table table-striped px-2">
+        <table className="table table-striped px-2 table-hover">
           <thead>
             <tr>
               <th>Name</th>

@@ -10,13 +10,12 @@ const loserStyle =
 };
 export default function ResultContainer(props){
 
-//  <ResultContainer id={2} algoName="Insertion" amount={13500} mod="Reverse Sort" runTime={2.02}/>
-
-
-
     return(
-        <div className="col-lg-5 rounded-4 bg-dark m-3 p-3" style={props.winner ? winnerStyle : loserStyle}>
-            <p>{props.id}</p>
+        <div className="col-lg rounded-4 bg-dark m-3 p-3" style={props.winner ? winnerStyle : loserStyle}>
+            <h3 className="font-monospace text-center">
+                Algorithm # {props.id}
+            </h3>
+            <hr className="mb-4" />
             <p>Algorithm:  {props.algoName}</p>
             <p>Amount: {props.amount}</p>
             <p>Option: {props.mod}</p>

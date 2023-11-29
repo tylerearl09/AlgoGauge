@@ -6,7 +6,13 @@ export default function Results(){
     if(!results)
     {
         return(
-            <div>You have not run any tests yet</div>
+            <div className="row justify-content-center">
+        <div className="col-md-8">
+          <h2 className="text-center border-bottom display-5 mt-3">
+            NO TESTS RUN YET...
+          </h2>
+        </div>
+      </div>
         )
     }
 

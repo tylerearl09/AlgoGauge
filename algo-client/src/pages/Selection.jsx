@@ -48,6 +48,7 @@ export default function Selection() {
       window.alert("Please select at least one algorithm");
       return;
     }
+    setModalShow(true);
     let algoOne = algoName[0];
     let algoTwo = algoName[1];
     let amountOne = dataAmount[0];
@@ -180,7 +181,7 @@ export default function Selection() {
                 className="btn btn-lg btn-success"
                 onClick={() => {
                   handleOnSubmit();
-                  setModalShow(true);                 
+                                   
                 }}
               >
                 Run Tests!

@@ -17,7 +17,7 @@ export default function Selection() {
 
   const [dataAmount, setDataAmount] = useState([]);
 
-  const [name, setName] = useState();
+  const [name, setName] = useState("");
 
   const handleAlgoNameChange = (number, newAlgorithmName) => {
     let temp = algoName;
@@ -38,6 +38,16 @@ export default function Selection() {
   };
 
   async function handleOnSubmit() {
+    if (name === "")
+    {
+      window.alert("Please enter a name");
+      return;
+    }
+    if (algoName.length === 0)
+    {
+      window.alert("Please select at least one algorithm");
+      return;
+    }
     let algoOne = algoName[0];
     let algoTwo = algoName[1];
     let amountOne = dataAmount[0];
@@ -60,9 +70,9 @@ export default function Selection() {
     const controller = new AbortController();
 
     const timeoutId = setTimeout(() => controller.abort(), timeout_time);
-    let testResults = ""
+    let testResults = "";
     //await fetch(`http://localhost:${process.env.REACT_APP_BACKEND_PORT}/record/test`, {
-    const response = await fetch(
+    await fetch(
       `http://localhost:${process.env.REACT_APP_BACKEND_PORT}/record/test`,
       {
         method: "POST",
@@ -169,8 +179,7 @@ export default function Selection() {
               <Button
                 className="btn btn-lg btn-success"
                 onClick={() => {
-                  handleOnSubmit();
-                  setModalShow(true);
+                  handleOnSubmit();                  
                 }}
               >
                 Run Tests!

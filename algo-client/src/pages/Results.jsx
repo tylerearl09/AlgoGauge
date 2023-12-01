@@ -35,6 +35,35 @@ export default function Results(){
         </div>
       </div>
         <div className="row pb-5 pt-2 mx-auto justify-content-center align-items-center">
+            <table>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Sorting Algorithm</th>
+                  <th>Number of Items</th>
+                  <th>Data Distribution</th>
+                  <th>Wall Time</th>
+                  <th>Perf Data 1</th>
+                  <th>Perf Data 2</th>
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  jsonObj.map((obj, index) => 
+                      <tr>
+                        <th>Algorithm # {index + 1 + " " + (checkWinnerFunc(index) ? "winner": "") }</th>
+                        <td>{obj.algorithmName}</td>
+                        <td>{obj.algorithmLength}</td>
+                        <td>{obj.algorithmOption}</td>
+                        <td>{obj.algorithmRunTime_ms}</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                    )
+                }
+              </tbody>
+            </table>
+
             <div className="col-lg-5 border-orange rounded-4 bg-dark m-3 p-3">
                 <ResultContainer 
                     id={1} 

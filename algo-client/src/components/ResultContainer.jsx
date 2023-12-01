@@ -37,8 +37,8 @@ export default function ResultContainer(props){
                 </div>
                 <div className="row">
                     <div className="col-md-8 d-flex justify-content-between fs-4 fw-bolder">
-                        <p>Run Time:</p>
-                        <p>{props.runTime}</p>
+                        <p>Wall Time:</p>
+                        <p>{props.runTime} ms</p>
                     </div>
                 </div>
             </div>

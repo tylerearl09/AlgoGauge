@@ -68,7 +68,8 @@ export default function Selection() {
 
     let errorCaught = false;
 
-    const controller = new AbortController();
+
+    const controller = new AbortController()
 
     const timeoutId = setTimeout(() => controller.abort(), timeout_time);
     let testResults = "";
@@ -111,7 +112,7 @@ export default function Selection() {
       setModalShow(false);
       // Show error about timeout
       // --- Convert to modal, or just clean up in general
-      window.alert("Test timed out, please lower values");
+      window.alert("Test timed out, please lower values")
     }
   }
 

@@ -28,11 +28,11 @@ function NavBar() {
               Results
             </Link>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <Link className="nav-link" to="/hello">
               Test
             </Link>
-          </li>
+          </li> */}
           <li className="nav-item">
             <Link
               className="nav-link"

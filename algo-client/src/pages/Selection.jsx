@@ -48,6 +48,7 @@ export default function Selection() {
       window.alert("Please select at least one algorithm");
       return;
     }
+    setModalShow(true);
     let algoOne = algoName[0];
     let algoTwo = algoName[1];
     let amountOne = dataAmount[0];
@@ -67,7 +68,8 @@ export default function Selection() {
 
     let errorCaught = false;
 
-    const controller = new AbortController();
+
+    const controller = new AbortController()
 
     const timeoutId = setTimeout(() => controller.abort(), timeout_time);
     let testResults = "";
@@ -110,7 +112,7 @@ export default function Selection() {
       setModalShow(false);
       // Show error about timeout
       // --- Convert to modal, or just clean up in general
-      window.alert("Test timed out, please lower values");
+      window.alert("Test timed out, please lower values")
     }
   }
 
@@ -119,7 +121,7 @@ export default function Selection() {
 
   return (
     <div>
-      <div className="row justify-content-center">
+      <div className="row m-auto justify-content-center">
         <div className="col-md-8">
           <h2 className="text-center border-bottom display-5 mt-3">
             ALGORITHM COMPARISONS
@@ -179,7 +181,8 @@ export default function Selection() {
               <Button
                 className="btn btn-lg btn-success"
                 onClick={() => {
-                  handleOnSubmit();                  
+                  handleOnSubmit();
+                                   
                 }}
               >
                 Run Tests!

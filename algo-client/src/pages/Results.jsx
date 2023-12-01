@@ -27,7 +27,7 @@ export default function Results(){
     console.log(jsonObj[0].algorithmName)
     return(
         <>
-        <div className="row justify-content-center">
+        <div className="row m-auto justify-content-center">
         <div className="col-md-8">
           <h2 className="text-center border-bottom display-5 mt-3">
             RESULTS

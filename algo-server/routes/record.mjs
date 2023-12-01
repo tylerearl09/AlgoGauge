@@ -78,7 +78,7 @@ router.post("/test", async (req, resp) => {
 
     console.log("Starting Test")
     //exec("powershell cat helloWorld.cpp", (error, stdout, stderr) => {
-    exec("wsl ./AlgoGauge -j " + parseToCMDArgument(req.body), {timeout:30000}, (error, stdout, stderr) => {
+    exec("wsl ./AlgoGauge -j --perf=sample " + parseToCMDArgument(req.body), {timeout:30000}, (error, stdout, stderr) => {
       if (error) {
         console.log(`error: ${error.message}`);
         //resp.send("Time Out: Please enter a smaller value").status(416);

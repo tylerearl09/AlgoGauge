@@ -35,7 +35,8 @@ export default function Results(){
         </div>
       </div>
         <div className="row pb-5 pt-2 mx-auto justify-content-center align-items-center">
-            <table>
+          <div className="d-flex justify-content-center border-orange rounded shadow-lg w-75 mx-auto mt-3">
+            <table className="table table-striped">
               <thead>
                 <tr>
                   <th></th>
@@ -51,11 +52,11 @@ export default function Results(){
                 {
                   jsonObj.map((obj, index) => 
                       <tr>
-                        <th>Algorithm # {index + 1 + " " + (checkWinnerFunc(index) ? "winner": "") }</th>
+                        <th>Algorithm # {index + 1 }</th>
                         <td>{obj.algorithmName}</td>
                         <td>{obj.algorithmLength}</td>
                         <td>{obj.algorithmOption}</td>
-                        <td>{obj.algorithmRunTime_ms}</td>
+                        <td className={(checkWinnerFunc(index) ? "text-warning" : "")}>{obj.algorithmRunTime_ms}</td>
                         <td></td>
                         <td></td>
                       </tr>
@@ -63,8 +64,8 @@ export default function Results(){
                 }
               </tbody>
             </table>
-
-            <div className="col-lg-5 border-orange rounded-4 bg-dark m-3 p-3">
+          </div>
+            {/* <div className="col-lg-5 border-orange rounded-4 bg-dark m-3 p-3">
                 <ResultContainer 
                     id={1} 
                     algoName={jsonObj[0].algorithmName} 
@@ -83,7 +84,7 @@ export default function Results(){
                     runTime={jsonObj[1].algorithmRunTime_ms} 
                     winner={checkWinnerFunc(1)}
                 />
-            </div>
+            </div> */}
         </div>        
         </>
     )

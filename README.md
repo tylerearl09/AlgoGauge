@@ -38,3 +38,16 @@ There are many features that still need to be added to the program, including:
 * Displaying perf date from the tests (it is returned from the JSON, we just currently are not doing anything with it)
 * An about me page describing the purpose of the program and other relevent data.
 * The ability to select additional options, yet to be outlined by the professor, when choosing algorithms from the dropdown.
+
+## Running the project as it stands
+
+As it stands the project should run locally without much hiccups. Upon cloning the repository to your local machine you should:
+
+* Make sure you have Node installed on your local machine
+* Run npm install on the algo-client and algo-server folders (this will install all the packages needed to run the program)
+* create a .env file in both the algo-client and algo-server folders containing the following variables
+
+For the algo-client .env:
+* REACT_APP_BACKEND_PORT
+
+For the algo-server .env:

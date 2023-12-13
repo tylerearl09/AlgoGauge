@@ -48,6 +48,20 @@ As it stands the project should run locally without much hiccups. Upon cloning t
 * create a .env file in both the algo-client and algo-server folders containing the following variables
 
 For the algo-client .env:
-* REACT_APP_BACKEND_PORT
+* REACT_APP_BACKEND_PORT=5000 (The Port can be anything, 5000 is just used as an example here)
 
 For the algo-server .env:
+* ATLAS_URI=mongodb+srv://<username>:<password>@cluster0.9ktfzny.mongodb.net/?retryWrites=true&w=majority (This is the string we used, but it could change in the future, look at MongoDB documentation to be sure)
+* PORT=4000 (Again the port can be anything, 4000 is the example)
+
+To note that currently the backend is using a MongoDB Atlas data store, you will have to configure your own atlas data store with collection named 'records' to begin.
+
+After following these steps you should be able to run the command 'npm start' on both the frontend and backend to see the project in your browser.
+
+## Deploying the project
+
+Deploying is something that is still a todo, and may be something that you'll have to figure out on your own. Sorry about that
+
+## Final Thoughts
+
+We enjoyed working on this project, and hope you do too, good luck!

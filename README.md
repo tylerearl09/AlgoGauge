@@ -26,4 +26,10 @@ Once the user selects these options, they have the ability to select the number 
 
 The user is then redirected to a results page the contains the information passed from the two tests as well as a winner based on the Wall Time.
 
-There is also a history page
+There is also a history page that shows all the tests that have been run with the ability to click on any given test and see a results page with that specific test.
+
+## What It does not do
+
+There are many features that still need to be added to the program, including:
+
+* A queueing system that shows the user where they are at in a queue, for now we j

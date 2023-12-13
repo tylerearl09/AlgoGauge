@@ -12,7 +12,7 @@ The AlgoGauge project currently can compare and contrast based on sorting algori
 * Insertion
 * Heap
 * Selection
-* and Merge
+* Merge
 
 The user can then choose data ordering based on:
 
@@ -24,7 +24,7 @@ The user can then choose data ordering based on:
 
 Once the user selects these options, they have the ability to select the number of items using either the slider or the text box. The text box has a limit of unsigned int as a max, while the slider has different maxes based on the algorithm.
 
-The user is then redirected to a results page the contains the information passed from the two tests as well as a winner based on the Wall Time.
+The user is then redirected to a results page that contains the information passed from the two tests as well as a winner based on the Wall Time.
 
 There is also a history page that shows all the tests that have been run with the ability to click on any given test and see a results page with that specific test.
 
@@ -32,20 +32,20 @@ There is also a history page that shows all the tests that have been run with th
 
 There are many features that still need to be added to the program, including:
 
-* A queueing system that shows the user where they are at in a queue, for now we just display a modal simulating a queue
+* A queueing system that shows the user where they are in a queue, for now, we just display a modal simulating a queue
 * The ability to compare and contrast more than 2 tests
 * The ability to compare and contrast hashing algorithms
-* Displaying perf date from the tests (it is returned from the JSON, we just currently are not doing anything with it)
-* An about me page describing the purpose of the program and other relevent data.
-* The ability to select additional options, yet to be outlined by the professor, when choosing algorithms from the dropdown.
+* Displaying perf date from the tests (it is returned to the DataBase, we just currently are not doing anything with it on the results screen)
+* An about me page describing the purpose of the program and other relevant data.
+* The ability to select additional options, is yet to be outlined by the professor when choosing algorithms from the dropdown.
 
 ## Running the project as it stands
 
-As it stands the project should run locally without much hiccups. Upon cloning the repository to your local machine you should:
+As it stands the project should run locally without many hiccups. Upon cloning the repository to your local machine you should:
 
 * Make sure you have Node installed on your local machine
 * Run npm install on the algo-client and algo-server folders (this will install all the packages needed to run the program)
-* create a .env file in both the algo-client and algo-server folders containing the following variables
+* Create a .env file in both the algo-client and algo-server folders containing the following variables
 
 For the algo-client .env:
 * REACT_APP_BACKEND_PORT=5000 (The Port can be anything, 5000 is just used as an example here)
@@ -54,13 +54,13 @@ For the algo-server .env:
 * ATLAS_URI=mongodb+srv://<username>:<password>@cluster0.9ktfzny.mongodb.net/?retryWrites=true&w=majority (This is the string we used, but it could change in the future, look at MongoDB documentation to be sure)
 * PORT=4000 (Again the port can be anything, 4000 is the example)
 
-To note that currently the backend is using a MongoDB Atlas data store, you will have to configure your own atlas data store with collection named 'records' to begin.
+To note that currently, the backend is using a MongoDB Atlas data store, you will have to configure your own Atlas data store with a collection named 'records' to begin.
 
-After following these steps you should be able to run the command 'npm start' on both the frontend and backend to see the project in your browser.
+After following these steps you should be able to run the command 'npm start' on both the frontend(Algo-Client) and backend(Algo-Server) to see the project in your browser.
 
 ## Deploying the project
 
-Deploying is something that is still a todo, and may be something that you'll have to figure out on your own. Sorry about that
+Deploying is something that is still a todo, and maybe something that you'll have to figure out on your own. Sorry about that
 
 ## Final Thoughts
 

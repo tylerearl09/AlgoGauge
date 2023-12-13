@@ -28,8 +28,13 @@ The user is then redirected to a results page the contains the information passe
 
 There is also a history page that shows all the tests that have been run with the ability to click on any given test and see a results page with that specific test.
 
-## What It does not do
+## What It does not do/Todos
 
 There are many features that still need to be added to the program, including:
 
-* A queueing system that shows the user where they are at in a queue, for now we j
+* A queueing system that shows the user where they are at in a queue, for now we just display a modal simulating a queue
+* The ability to compare and contrast more than 2 tests
+* The ability to compare and contrast hashing algorithms
+* Displaying perf date from the tests (it is returned from the JSON, we just currently are not doing anything with it)
+* An about me page describing the purpose of the program and other relevent data.
+* The ability to select additional options, yet to be outlined by the professor, when choosing algorithms from the dropdown.
